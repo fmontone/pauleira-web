@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Header Should render Main Nav Without Crash 1`] = `Promise {}`;

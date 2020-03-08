@@ -9,8 +9,8 @@ import GlobalStyles from '~/styles/global';
 function App() {
   return (
     <Router history={history}>
-      <GlobalStyles />
       <Routes />
+      <GlobalStyles />
     </Router>
   );
 }

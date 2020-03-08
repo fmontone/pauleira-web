@@ -1,7 +1,12 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import NavBar from '~/components/NavBar';
+import { Container } from './styles';
 
 export default function Main() {
-  return <p>Main Page</p>;
+  return (
+    <Container data-testid="pages-main">
+      <NavBar />
+    </Container>
+  );
 }
