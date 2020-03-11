@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 import colors from './colors';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Rubik:300,500&display=swap');
 
   *, *::after, *::before {
    margin: 0;
