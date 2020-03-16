@@ -7,7 +7,7 @@ export default createGlobalStyle`
   *, *::after, *::before {
    margin: 0;
    padding: 0;
-   outline: 0;
+   outline: none;
    box-sizing: border-box;
    -webkit-tap-highlight-color: transparent;
  }
@@ -34,6 +34,10 @@ export default createGlobalStyle`
  a {
    text-decoration: none;
    color: ${colors.statusInfo};
+ }
+
+ button {
+   border: none;
  }
 
 `;

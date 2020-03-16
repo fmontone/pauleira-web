@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Custom Hook useWindowSize
+ * Custom React Hook useWindowSize
+ * @returns width: {Number}, height: {Number}
  */
 
 export function useWindowSize() {

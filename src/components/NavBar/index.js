@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useWindowSize } from '~/lib/useWindoSize';
+import { ActivePageContext } from '~/contexts/ActivePageContext';
+import { useWindowSize } from '~/hooks/useWindoSize';
 
 import Icon from '~/components/Icon';
 import colors from '~/styles/colors';
@@ -20,25 +21,27 @@ import {
 
 export default function NavBar() {
   const [menu, setMenu] = useState(false);
+  const { activePage, setActivePage } = useContext(ActivePageContext);
+
   const size = useWindowSize();
 
   function handleMenu() {
     setMenu(!menu);
   }
 
+  function handleNavPosition(page) {
+    setActivePage(page);
+  }
+
   return (
-    <Header data-testid="main-nav">
+    <Header data-testid="NavBar">
       <Container>
         <Logo size={size.width < breakePoint.tabletLs ? 'small' : 'large'}>
           <Link to="/">
             {size.width < breakePoint.tabletLs ? (
               <Icon name="logo-flying-p" color={colors.greyLighter} />
             ) : (
-              <img
-                src={PauleiraLogo}
-                style={{ fill: 'red' }}
-                alt="Pauleira Guitars"
-              />
+              <img src={PauleiraLogo} alt="Pauleira Guitars" />
             )}
           </Link>
         </Logo>
@@ -74,20 +77,60 @@ export default function NavBar() {
           </NavToggler>
 
           <Menu menu={menu}>
+            <li>{activePage}</li>
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                onClick={() => handleNavPosition('home')}
+                className={activePage === 'home' ? 'isActive' : ''}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/sobre">Sobre</Link>
+              <Link
+                to="/sobre"
+                onClick={() => handleNavPosition('sobre')}
+                className={activePage === 'sobre' ? 'isActive' : ''}
+              >
+                Sobre
+              </Link>
             </li>
             <li>
-              <Link to="/cursos">Cursos</Link>
+              <Link
+                to="/cursos"
+                onClick={() => handleNavPosition('cursos')}
+                className={activePage === 'cursos' ? 'isActive' : ''}
+              >
+                Cursos
+              </Link>
             </li>
             <li>
-              <Link to="/galeria">Galeria</Link>
+              <Link
+                to="/galeria"
+                onClick={() => handleNavPosition('galeria')}
+                className={activePage === 'galeria' ? 'isActive' : ''}
+              >
+                Galeria
+              </Link>
             </li>
             <li>
-              <Link to="/contato">Contato</Link>
+              <Link
+                to="/contato"
+                onClick={() => handleNavPosition('contato')}
+                className={activePage === 'contato' ? 'isActive' : ''}
+              >
+                Contato
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/endereco"
+                onClick={() => handleNavPosition('endereco')}
+                className={activePage === 'endereco' ? 'isActive' : ''}
+              >
+                Endereço
+              </Link>
             </li>
           </Menu>
         </Navigation>

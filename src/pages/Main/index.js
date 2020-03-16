@@ -1,12 +1,7 @@
 import React from 'react';
 
-import NavBar from '~/components/NavBar';
-import { Container } from './styles';
+import Hero from './Hero';
 
 export default function Main() {
-  return (
-    <Container data-testid="pages-main">
-      <NavBar />
-    </Container>
-  );
+  return <Hero />;
 }

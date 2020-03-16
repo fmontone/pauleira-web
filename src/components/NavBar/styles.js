@@ -12,7 +12,8 @@ export const Header = styled.header`
   height: 48px;
   position: fixed;
   bottom: 0;
-  background-color: ${colors.black};
+  background-color: ${props =>
+    props.mainPage ? colors.black : 'rgb(10, 0, 18)'};
 
   display: flex;
   flex-direction: column;
@@ -22,6 +23,8 @@ export const Header = styled.header`
     position: relative;
     height: 64px;
   }
+
+  z-index: 100;
 `;
 
 export const Container = styled(ContainerCustom)`
@@ -127,11 +130,14 @@ export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   background-color: ${colors.black};
-  transition: all 0.2s linear;
 
+  transition: all 0.2s linear;
   z-index: 99;
+
+  @media ${device.tablet} {
+    background-color: unset;
+  }
 
   @media ${device.tabletLs} {
     width: unset;
@@ -161,7 +167,7 @@ export const Menu = styled.ul`
     }
 
     & + li {
-      margin-top: 40px;
+      margin-top: 32px;
 
       @media ${device.tablet} {
         margin-top: unset;
@@ -171,6 +177,10 @@ export const Menu = styled.ul`
 
     a {
       color: ${colors.greyHeavy};
+
+      &.isActive {
+        color: ${colors.terceary};
+      }
 
       @media ${device.tablet} {
         color: ${colors.greyLighter};

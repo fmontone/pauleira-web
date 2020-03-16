@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Router } from 'react-router-dom';
 
 import Routes from './routes';
 import history from '~/services/history';
 
+import { ActivePageContext } from '~/contexts/ActivePageContext';
 import GlobalStyles from '~/styles/global';
 
+import NavBar from '~/components/NavBar';
+import PageWrapper from '~/components/PageWrapper';
+
 function App() {
+  const [activePage, setActivePage] = useState(null);
+
+  function updateActivePage() {
+    const location = window.location.pathname.split('/')[1];
+    setActivePage(location || 'home');
+  }
+
+  // TRIGGERS when page history changes
+  window.onpopstate = () => updateActivePage();
+
+  useEffect(() => {
+    updateActivePage();
+  }, []);
+
   return (
     <Router history={history}>
-      <Routes />
       <GlobalStyles />
+      <ActivePageContext.Provider value={{ activePage, setActivePage }}>
+        <PageWrapper>
+          <NavBar />
+          <Routes />
+        </PageWrapper>
+      </ActivePageContext.Provider>
     </Router>
   );
 }
