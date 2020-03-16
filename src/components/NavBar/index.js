@@ -21,16 +21,12 @@ import {
 
 export default function NavBar() {
   const [menu, setMenu] = useState(false);
-  const { activePage, setActivePage } = useContext(ActivePageContext);
+  const { activePage } = useContext(ActivePageContext);
 
   const size = useWindowSize();
 
   function handleMenu() {
     setMenu(!menu);
-  }
-
-  function handleNavPosition(page) {
-    setActivePage(page);
   }
 
   return (
@@ -77,20 +73,14 @@ export default function NavBar() {
           </NavToggler>
 
           <Menu menu={menu}>
-            <li>{activePage}</li>
             <li>
-              <Link
-                to="/"
-                onClick={() => handleNavPosition('home')}
-                className={activePage === 'home' ? 'isActive' : ''}
-              >
+              <Link to="/" className={activePage === 'home' ? 'isActive' : ''}>
                 Home
               </Link>
             </li>
             <li>
               <Link
                 to="/sobre"
-                onClick={() => handleNavPosition('sobre')}
                 className={activePage === 'sobre' ? 'isActive' : ''}
               >
                 Sobre
@@ -99,7 +89,6 @@ export default function NavBar() {
             <li>
               <Link
                 to="/cursos"
-                onClick={() => handleNavPosition('cursos')}
                 className={activePage === 'cursos' ? 'isActive' : ''}
               >
                 Cursos
@@ -108,7 +97,6 @@ export default function NavBar() {
             <li>
               <Link
                 to="/galeria"
-                onClick={() => handleNavPosition('galeria')}
                 className={activePage === 'galeria' ? 'isActive' : ''}
               >
                 Galeria
@@ -117,7 +105,6 @@ export default function NavBar() {
             <li>
               <Link
                 to="/contato"
-                onClick={() => handleNavPosition('contato')}
                 className={activePage === 'contato' ? 'isActive' : ''}
               >
                 Contato
@@ -126,7 +113,6 @@ export default function NavBar() {
             <li>
               <Link
                 to="/endereco"
-                onClick={() => handleNavPosition('endereco')}
                 className={activePage === 'endereco' ? 'isActive' : ''}
               >
                 Endereço
