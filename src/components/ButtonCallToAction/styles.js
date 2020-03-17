@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 import colors from '~/styles/colors';
 import fonts from '~/styles/fonts';
+// import { windowSize } from '~/styles/queries';
 
 export const Button = styled.button`
   height: ${props => (props.windowShort ? '40px' : '64px')};
   min-height: ${props => (props.windowShort ? '40px' : '64px')};
-  width: ${props => (props.width === 'auto' ? 'auto' : '100%')};
-  padding: 0 48px;
+  width: ${props => (props.width === 'stretch' ? '100%' : 'auto')};
+  padding: ${props => (props.width === 'stretch' ? '0' : '0 48px')};
   font-family: ${fonts.primary};
   color: ${colors.white};
   font-size: 16px;

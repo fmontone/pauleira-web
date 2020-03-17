@@ -3,8 +3,8 @@
 
 export const windowSize = {
   mobile: '599',
-  tablet: '600',
-  tabletLs: '900',
+  tablet: '650',
+  tabletLs: '770',
   laptop: '1200',
   desktop: '1800',
 };

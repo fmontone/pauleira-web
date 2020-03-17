@@ -8,19 +8,16 @@ import fonts from '~/styles/fonts';
 import { device } from '~/styles/queries';
 
 export const Container = styled(ContainerCustom)`
-  height: 100%;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 16px;
+  padding: 32px 16px 64px 16px;
+  background: linear-gradient(#44007f 0%, #120021 100%, #272727 100%);
 
   overflow-x: hidden;
-
-  @media ${device.tablet} {
-    align-items: initial;
-  }
 `;
 
 export const Title = styled.h1`
@@ -30,14 +27,10 @@ export const Title = styled.h1`
   text-align: center;
 
   @media ${device.tablet} {
-    width: 50%;
-    text-align: left;
-
-    z-index: 2;
+    font-size: 52px;
   }
 
   .title__highlight {
-    font-size: ${props => (props.windowShort ? '40px' : '54px')};
     color: ${colors.secondary};
     text-transform: uppercase;
     display: block;
@@ -45,20 +38,7 @@ export const Title = styled.h1`
 `;
 
 export const HeroImg = styled.img`
-  width: ${props => (props.windowShort ? '100%' : '423.34px')};
-
-  @media ${device.tablet} {
-    width: auto;
-    height: 100%;
-    position: absolute;
-    right: -10%;
-
-    z-index: 1;
-  }
+  width: auto;
 `;
 
-export const CallToAction = styled(ButtonCallToAction)`
-  @media ${device.tablet} {
-    z-index: 2;
-  }
-`;
+export const CallToAction = styled(ButtonCallToAction)``;

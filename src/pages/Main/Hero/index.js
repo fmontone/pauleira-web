@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { useWindowSize } from '~/hooks/useWindoSize';
+import history from '~/services/history';
 
 import HeroIllustration from '~/assets/PauleiraHeroIsometricIllustration.png';
 import { Container, Title, HeroImg, CallToAction } from './styles';
@@ -14,7 +14,6 @@ export default function Hero() {
     'Eletrônica',
   ];
   const [courseIndex, setCourseIndex] = useState(0);
-  const windowSize = useWindowSize();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,19 +27,18 @@ export default function Hero() {
 
   return (
     <Container>
-      <Title windowShort={windowSize.height <= 520}>
+      <Title>
         Aprenda
-        <span className="title__highlight">{courseList[courseIndex]}</span> de
-        guitarras e contrabaixos
+        <span className="title__highlight">{courseList[courseIndex]}</span>
+        de guitarras e contrabaixos
       </Title>
 
       <HeroImg
         src={HeroIllustration}
         alt="Pauleira Guitars Ilustração Isométrica da Luthier Paula Bifulvo ensinando técnicas de luthieria para um aluno"
-        windowShort={windowSize.height <= 520}
       />
 
-      <CallToAction windowShort={windowSize.height <= 520}>
+      <CallToAction onClick={() => history.push('/cursos')} width="stretch">
         Conheça Nossos Cursos
       </CallToAction>
     </Container>

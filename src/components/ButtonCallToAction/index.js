@@ -5,7 +5,7 @@ import { Button } from './styles';
 
 export default function ButtonCallToAction({ children, width, ...rest }) {
   return (
-    <Button type="text" width={width} {...rest}>
+    <Button type="button" width={width} {...rest}>
       {children}
     </Button>
   );
