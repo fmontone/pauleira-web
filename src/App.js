@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Router } from 'react-router-dom';
 
 import Routes from './routes';
@@ -12,6 +12,11 @@ import PageWrapper from '~/components/PageWrapper';
 
 function App() {
   const [activePage, setActivePage] = useState(null);
+
+  const providerActivePage = useMemo(() => ({ activePage, setActivePage }), [
+    activePage,
+    setActivePage,
+  ]);
 
   function updateActivePage() {
     const location = window.location.pathname.split('/')[1];
@@ -28,7 +33,7 @@ function App() {
   return (
     <Router history={history}>
       <GlobalStyles />
-      <ActivePageContext.Provider value={{ activePage, setActivePage }}>
+      <ActivePageContext.Provider value={providerActivePage}>
         <PageWrapper>
           <NavBar />
           <Routes />

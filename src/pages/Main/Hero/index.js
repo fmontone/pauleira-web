@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import history from '~/services/history';
+import { ActivePageContext } from '~/contexts/ActivePageContext';
 
 import HeroIllustration from '~/assets/PauleiraHeroIsometricIllustration.png';
 import { Container, Title, HeroImg, CallToAction } from './styles';
@@ -14,6 +15,7 @@ export default function Hero() {
     'Eletrônica',
   ];
   const [courseIndex, setCourseIndex] = useState(0);
+  const { setActivePage } = useContext(ActivePageContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,6 +26,11 @@ export default function Hero() {
 
     return () => clearInterval(interval);
   }, [courseIndex, courseList]);
+
+  function handleCallToActionClick() {
+    setActivePage('cursos');
+    history.push('/cursos');
+  }
 
   return (
     <Container>
@@ -38,7 +45,7 @@ export default function Hero() {
         alt="Pauleira Guitars Ilustração Isométrica da Luthier Paula Bifulvo ensinando técnicas de luthieria para um aluno"
       />
 
-      <CallToAction onClick={() => history.push('/cursos')} width="stretch">
+      <CallToAction onClick={handleCallToActionClick} width="stretch">
         Conheça Nossos Cursos
       </CallToAction>
     </Container>
