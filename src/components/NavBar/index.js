@@ -72,7 +72,7 @@ export default function NavBar() {
             <div className={menu ? 'open' : ''} />
           </NavToggler>
 
-          <Menu menu={menu}>
+          <Menu menu={menu} onClick={handleMenu}>
             <li>
               <Link to="/" className={activePage === 'home' ? 'isActive' : ''}>
                 Home
