@@ -21,7 +21,7 @@ import {
 
 export default function NavBar() {
   const [menu, setMenu] = useState(false);
-  const { activePage } = useContext(ActivePageContext);
+  const { activePage, setActivePage } = useContext(ActivePageContext);
 
   const size = useWindowSize();
 
@@ -74,13 +74,18 @@ export default function NavBar() {
 
           <Menu menu={menu} onClick={handleMenu}>
             <li>
-              <Link to="/" className={activePage === 'home' ? 'isActive' : ''}>
+              <Link
+                to="/"
+                className={activePage === 'home' ? 'isActive' : ''}
+                onClick={() => setActivePage('home')}
+              >
                 Home
               </Link>
             </li>
             <li>
               <Link
                 to="/sobre"
+                onClick={() => setActivePage('sobre')}
                 className={activePage === 'sobre' ? 'isActive' : ''}
               >
                 Sobre
@@ -89,6 +94,7 @@ export default function NavBar() {
             <li>
               <Link
                 to="/cursos"
+                onClick={() => setActivePage('cursos')}
                 className={activePage === 'cursos' ? 'isActive' : ''}
               >
                 Cursos
@@ -97,6 +103,7 @@ export default function NavBar() {
             <li>
               <Link
                 to="/galeria"
+                onClick={() => setActivePage('galeria')}
                 className={activePage === 'galeria' ? 'isActive' : ''}
               >
                 Galeria
@@ -105,6 +112,7 @@ export default function NavBar() {
             <li>
               <Link
                 to="/contato"
+                onClick={() => setActivePage('contato')}
                 className={activePage === 'contato' ? 'isActive' : ''}
               >
                 Contato
@@ -113,6 +121,7 @@ export default function NavBar() {
             <li>
               <Link
                 to="/endereco"
+                onClick={() => setActivePage('endereco')}
                 className={activePage === 'endereco' ? 'isActive' : ''}
               >
                 Endereço

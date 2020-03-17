@@ -12,8 +12,7 @@ export const Header = styled.header`
   height: 48px;
   position: fixed;
   bottom: 0;
-  background-color: ${props =>
-    props.mainPage ? colors.black : 'rgb(10, 0, 18)'};
+  background-color: ${colors.black};
 
   display: flex;
   flex-direction: column;
@@ -82,7 +81,7 @@ export const NavToggler = styled.button`
   cursor: pointer;
   z-index: 100;
 
-  transition: all 0.3s linear;
+  transition: all 0.3s ease-in-out;
   transform: ${props => (props.menu ? 'rotate(-180deg)' : 'rotate(0deg)')};
 
   @media ${device.tabletLs} {
@@ -107,7 +106,7 @@ export const NavToggler = styled.button`
     }
 
     :nth-child(2).open {
-      left: -10px;
+      left: -2000px;
       opacity: 0;
     }
 
@@ -132,7 +131,7 @@ export const Menu = styled.ul`
   justify-content: flex-end;
   background-color: ${colors.black};
 
-  transition: all 0.2s linear;
+  transition: all 0.2s ease-in-out;
   z-index: 99;
 
   @media ${device.tabletLs} {
