@@ -135,7 +135,7 @@ export const Menu = styled.ul`
   transition: all 0.2s linear;
   z-index: 99;
 
-  @media ${device.tablet} {
+  @media ${device.tabletLs} {
     background-color: unset;
   }
 
