@@ -31,6 +31,52 @@ export default createGlobalStyle`
    color: ${colors.black};
  }
 
+ /* HEADINGS ~ TITLES */
+
+ h1, h2, h3, h4, h5, h6 {font-weight: 500;}
+
+ h1 {
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  line-height: 44px;
+ }
+
+ h2 {
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+ }
+
+ h3 {
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+ }
+
+ h4 {
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+ }
+
+ h5 {
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 11.4px;
+  letter-spacing: -0.02em;
+  line-height: 12px;
+ }
+
+ h6 {
+  font-family: Rubik;
+  font-weight: normal;
+  font-size: 8.5px;
+  line-height: 12px;
+ }
+
  a {
    text-decoration: none;
    color: ${colors.statusInfo};

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import PageTitle from '~/components/PageTitle';
 import { Container } from './styles';
 
 export default function Gallery() {
   return (
-    <Container>
-      <h1>Galeria</h1>
-    </Container>
+    <>
+      <PageTitle>Galeria</PageTitle>
+      <Container />
+    </>
   );
 }

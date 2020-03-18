@@ -1,11 +1,13 @@
 import React from 'react';
 
+import PageTitle from '~/components/PageTitle';
 import { Container } from './styles';
 
 export default function About() {
   return (
-    <Container>
-      <h1>Sobre</h1>
-    </Container>
+    <>
+      <PageTitle>Sobre</PageTitle>
+      <Container />
+    </>
   );
 }

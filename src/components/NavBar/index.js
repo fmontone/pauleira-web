@@ -44,7 +44,7 @@ export default function NavBar() {
 
         <QuickLinks>
           <li>
-            <Link to="/contact">
+            <Link to="/contato">
               <Icon name="social-contact" color={colors.greyHeavy} />
             </Link>
           </li>

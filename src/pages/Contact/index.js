@@ -1,11 +1,13 @@
 import React from 'react';
 
+import PageTitle from '~/components/PageTitle';
 import { Container } from './styles';
 
 export default function Contact() {
   return (
-    <Container>
-      <h1>Contato</h1>
-    </Container>
+    <>
+      <PageTitle>Contato</PageTitle>
+      <Container />
+    </>
   );
 }
