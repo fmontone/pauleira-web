@@ -16,12 +16,13 @@ export const ContainerWrapper = styled.div`
   overflow: hidden;
   background-color: #000;
 
-  @media ${device.desktop} {
+  @media ${device.laptop} {
     height: 365px;
   }
 `;
 
 export const Container = styled(ContainerCustom)`
+  padding: 0 16px;
   z-index: 3;
 `;
 

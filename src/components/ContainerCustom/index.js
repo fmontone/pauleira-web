@@ -12,5 +12,10 @@ ContainerCustom.propTypes = {
     PropTypes.element,
     PropTypes.func,
     PropTypes.node,
-  ]).isRequired,
+    PropTypes.string,
+  ]),
+};
+
+ContainerCustom.defaultProps = {
+  children: '',
 };

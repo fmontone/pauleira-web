@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { ActivePageContext } from '~/contexts/ActivePageContext';
-import { useWindowSize } from '~/hooks/useWindoSize';
+import { useWindowSize } from '~/hooks/useWindowSize';
 
 import Icon from '~/components/Icon';
 import colors from '~/styles/colors';
@@ -19,7 +20,7 @@ import {
   QuickLinks,
 } from './styles';
 
-export default function NavBar() {
+export default function NavBar({ isMainPage }) {
   const [menu, setMenu] = useState(false);
   const { activePage, setActivePage } = useContext(ActivePageContext);
 
@@ -30,7 +31,7 @@ export default function NavBar() {
   }
 
   return (
-    <Header data-testid="NavBar">
+    <Header data-testid="NavBar" isMainPage={isMainPage}>
       <Container>
         <Logo size={size.width < breakePoint.tabletLs ? 'small' : 'large'}>
           <Link to="/">
@@ -133,3 +134,11 @@ export default function NavBar() {
     </Header>
   );
 }
+
+NavBar.propTypes = {
+  isMainPage: PropTypes.bool,
+};
+
+NavBar.defaultProps = {
+  isMainPage: false,
+};

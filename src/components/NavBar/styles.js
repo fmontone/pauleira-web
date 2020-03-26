@@ -12,7 +12,7 @@ export const Header = styled.header`
   height: 48px;
   position: fixed;
   bottom: 0;
-  background-color: ${colors.black};
+  background: ${props => (props.isMainPage ? '#0A0012' : colors.black)};
 
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@ export const Container = styled(ContainerCustom)`
   @media ${device.tabletLs} {
     flex-flow: row;
     height: 100%;
-    padding: 0 8px;
+    padding: 0 16px;
     align-items: center;
   }
 `;

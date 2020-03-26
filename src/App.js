@@ -34,8 +34,8 @@ function App() {
     <Router history={history}>
       <GlobalStyles />
       <ActivePageContext.Provider value={providerActivePage}>
-        <PageWrapper>
-          <NavBar />
+        <PageWrapper isMainPage={activePage === 'home'}>
+          <NavBar isMainPage={activePage === 'home'} />
           <Routes />
         </PageWrapper>
       </ActivePageContext.Provider>

@@ -19,8 +19,12 @@ export default function PageTitle({ children, image }) {
 }
 
 PageTitle.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string]).isRequired,
-  image: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+    PropTypes.element,
+  ]).isRequired,
+  image: PropTypes.string,
 };
 
 PageTitle.defaultProps = {

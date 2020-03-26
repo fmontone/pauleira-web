@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 import { Container } from './styles';
 
 export default function PageWrapper({ children, ...rest }) {
-  return (
-    <Container data-testid="PageWrapper" {...rest}>
-      {children}
-    </Container>
-  );
+  return <Container {...rest}>{children}</Container>;
 }
 
 PageWrapper.propTypes = {
@@ -17,4 +13,9 @@ PageWrapper.propTypes = {
     PropTypes.func,
     PropTypes.node,
   ]).isRequired,
+  isMainPage: PropTypes.bool,
+};
+
+PageWrapper.defaultProps = {
+  isMainPage: false,
 };

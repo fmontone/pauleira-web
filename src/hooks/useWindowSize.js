@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 /**
  * Custom React Hook useWindowSize
- * @returns width: {Number}, height: {Number}
+ * @returns {windowWidth: Number, windowHeight: Number}
  */
 
 export function useWindowSize() {
@@ -10,12 +10,12 @@ export function useWindowSize() {
 
   function getSize() {
     return {
-      width: isClient ? window.innerWidth : undefined,
-      height: isClient ? window.innerHeight : undefined,
+      windowWidth: isClient ? window.innerWidth : undefined,
+      windowHeight: isClient ? window.innerHeight : undefined,
     };
   }
 
-  const [windowSize, setWindowSize] = useState(getSize());
+  const [windowSize, setWindowSize] = useState(getSize);
 
   useEffect(() => {
     if (!isClient) {
