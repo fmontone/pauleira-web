@@ -186,11 +186,7 @@ export const Menu = styled.ul`
       }
 
       :hover {
-        color: ${colors.terceary};
-
-        @media ${device.tablet} {
-          color: ${colors.greyHeavy};
-        }
+        color: ${colors.secondary};
       }
     }
   }

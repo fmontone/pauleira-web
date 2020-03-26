@@ -24,7 +24,7 @@ export default function NavBar({ isMainPage }) {
   const [menu, setMenu] = useState(false);
   const { activePage, setActivePage } = useContext(ActivePageContext);
 
-  const size = useWindowSize();
+  const { windowWidth } = useWindowSize();
 
   function handleMenu() {
     setMenu(!menu);
@@ -33,9 +33,9 @@ export default function NavBar({ isMainPage }) {
   return (
     <Header data-testid="NavBar" isMainPage={isMainPage}>
       <Container>
-        <Logo size={size.width < breakePoint.tabletLs ? 'small' : 'large'}>
+        <Logo size={windowWidth < breakePoint.tabletLs ? 'small' : 'large'}>
           <Link to="/">
-            {size.width < breakePoint.tabletLs ? (
+            {windowWidth < breakePoint.tabletLs ? (
               <Icon name="logo-flying-p" color={colors.greyLighter} />
             ) : (
               <img src={PauleiraLogo} alt="Pauleira Guitars" />
