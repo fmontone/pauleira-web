@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Foot, Salve } from './styles';
+import { Foot, Salve, Container } from './styles';
 
 import QuickLinks from '~/components/QuickLinks';
 import ButtonCustom from '~/components/ButtonCustom';
@@ -11,11 +11,11 @@ export default function Footer() {
       <Salve>
         <h2>Let&apos;s Rock</h2>
         <p>Mande um salve para a Pauleira:</p>
-        <ButtonCustom model="regular" color="fuchsia" size="large" width="auto">
-          Abrir Whatsapp
-        </ButtonCustom>
+        <ButtonCustom model="callToAction">Abrir Whatsapp</ButtonCustom>
       </Salve>
-      <QuickLinks />
+      <Container>
+        <QuickLinks width="250px" />
+      </Container>
     </Foot>
   );
 }

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import colors from '~/styles/colors';
+
 export const Foot = styled.footer`
   width: 100%;
   display: flex;
@@ -24,4 +26,14 @@ export const Salve = styled.div`
   p {
     margin-bottom: 16px;
   }
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: ${colors.black};
 `;

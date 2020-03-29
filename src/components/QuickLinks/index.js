@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { IconList } from './styles';
@@ -6,9 +7,9 @@ import colors from '~/styles/colors';
 
 import Icon from '~/components/Icon';
 
-export default function QuickLinks() {
+export default function QuickLinks({ width }) {
   return (
-    <IconList>
+    <IconList width={width}>
       <li>
         <Link to="/contato">
           <Icon name="social-contact" color={colors.greyHeavy} />
@@ -32,3 +33,11 @@ export default function QuickLinks() {
     </IconList>
   );
 }
+
+QuickLinks.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
+
+QuickLinks.defaultProps = {
+  width: '100%',
+};

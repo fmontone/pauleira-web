@@ -4,9 +4,9 @@ import { device } from '~/styles/queries';
 
 export const IconList = styled.ul`
   height: 48px;
+  width: ${props => props.width};
   padding: 0 26px;
 
-  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,9 +15,5 @@ export const IconList = styled.ul`
 
   @media ${device.tablet} {
     justify-content: space-around;
-  }
-
-  @media ${device.tabletLs} {
-    display: none;
   }
 `;
