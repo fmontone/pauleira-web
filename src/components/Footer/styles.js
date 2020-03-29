@@ -19,7 +19,7 @@ export const Salve = styled.div`
   justify-content: center;
 
   h2 {
-    margin-bottom: 8;
+    margin-bottom: 8px;
     font-weight: bold;
   }
 
