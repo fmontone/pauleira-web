@@ -43,7 +43,7 @@ export default function NavBar({ isMainPage }) {
           </Link>
         </Logo>
 
-        <QuickLinks />
+        {windowWidth < breakePoint.tabletLs && <QuickLinks />}
 
         <Navigation>
           <NavToggler menu={menu} onClick={handleMenu}>

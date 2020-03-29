@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import ContainerCustom from '~/components/ContainerCustom';
-
 import colors from '~/styles/colors';
 import { device } from '~/styles/queries';
 
