@@ -2,4 +2,6 @@ import styled from 'styled-components';
 
 import ContainerCustom from '~/components/ContainerCustom';
 
-export const Container = styled(ContainerCustom)``;
+export const Container = styled(ContainerCustom)`
+  height: 100%;
+`;
