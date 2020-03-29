@@ -6,10 +6,11 @@ import { ActivePageContext } from '~/contexts/ActivePageContext';
 import { useWindowSize } from '~/hooks/useWindowSize';
 
 import Icon from '~/components/Icon';
-import colors from '~/styles/colors';
-import { windowSize as breakePoint } from '~/styles/queries';
+import QuickLinks from '~/components/QuickLinks';
 
+import colors from '~/styles/colors';
 import PauleiraLogo from '~/assets/svg/pauleira-logo.svg';
+import { windowSize as breakePoint } from '~/styles/queries';
 import {
   Header,
   Container,
@@ -17,7 +18,6 @@ import {
   Navigation,
   NavToggler,
   Menu,
-  QuickLinks,
 } from './styles';
 
 export default function NavBar({ isMainPage }) {
@@ -43,28 +43,7 @@ export default function NavBar({ isMainPage }) {
           </Link>
         </Logo>
 
-        <QuickLinks>
-          <li>
-            <Link to="/contato">
-              <Icon name="social-contact" color={colors.greyHeavy} />
-            </Link>
-          </li>
-          <li>
-            <a href="http://www.youtube.com/pauleira">
-              <Icon name="social-youtube" color={colors.greyHeavy} />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.youtube.com/pauleira">
-              <Icon name="social-instagram" color={colors.greyHeavy} />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.youtube.com/pauleira">
-              <Icon name="social-facebook" color={colors.greyHeavy} />
-            </a>
-          </li>
-        </QuickLinks>
+        <QuickLinks />
 
         <Navigation>
           <NavToggler menu={menu} onClick={handleMenu}>

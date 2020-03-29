@@ -16,7 +16,7 @@ export const Container = styled(ContainerCustom)`
   align-items: center;
   padding: 32px 16px 64px 16px;
 
-  overflow-x: hidden;
+  overflow: hidden;
 
   @media ${device.tabletLs} {
     padding: 0 16px;

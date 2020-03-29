@@ -9,6 +9,7 @@ import GlobalStyles from '~/styles/global';
 
 import NavBar from '~/components/NavBar';
 import PageWrapper from '~/components/PageWrapper';
+import Footer from '~/components/Footer';
 
 function App() {
   const [activePage, setActivePage] = useState(null);
@@ -37,6 +38,7 @@ function App() {
         <PageWrapper isMainPage={activePage === 'home'}>
           <NavBar isMainPage={activePage === 'home'} />
           <Routes />
+          {activePage !== 'home' && <Footer />}
         </PageWrapper>
       </ActivePageContext.Provider>
     </Router>

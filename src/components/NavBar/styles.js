@@ -191,23 +191,3 @@ export const Menu = styled.ul`
     }
   }
 `;
-
-export const QuickLinks = styled.ul`
-  height: 48px;
-  padding: 0 26px;
-
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-
-  @media ${device.tablet} {
-    justify-content: space-around;
-  }
-
-  @media ${device.tabletLs} {
-    display: none;
-  }
-`;
