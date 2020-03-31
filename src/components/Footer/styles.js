@@ -1,14 +1,21 @@
 import styled from 'styled-components';
 
 import colors from '~/styles/colors';
+import { device } from '~/styles/queries';
 
 export const Foot = styled.footer`
   width: 100%;
+  padding-bottom: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  border-top: 1px solid ${colors.grey};
+  background-color: ${colors.white};
+
+  @media ${device.tabletLs} {
+    padding-bottom: 0;
+  }
 `;
 
 export const Salve = styled.div`
