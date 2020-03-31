@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
 import colors from '~/styles/colors';
+import { device } from '~/styles/queries';
 
 export const Article = styled.article`
+  padding: 0 16px;
   margin-bottom: 32px;
+
+  @media ${device.laptop} {
+    padding: 0;
+  }
 
   /* Layout */
 
@@ -16,11 +22,6 @@ export const Article = styled.article`
   p,
   h2 {
     margin-bottom: 32px;
-
-    ::selection {
-      background-color: ${colors.terceary};
-      color: ${colors.primary};
-    }
   }
 
   h3,
@@ -58,18 +59,9 @@ export const Article = styled.article`
 
   strong {
     font-weight: 500;
-
-    ::selection {
-      background-color: ${colors.primary};
-      color: ${colors.terceary};
-    }
   }
 
   em {
-    ::selection {
-      background-color: ${colors.primary};
-      color: ${colors.terceary};
-    }
   }
 
   /* imagery */
@@ -80,29 +72,31 @@ export const Article = styled.article`
     margin-bottom: 32px;
 
     img {
+      width: 100%;
       max-width: 100%;
       padding: 12px;
       background: #fff;
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
-
-      ::selection {
-        background-color: ${colors.primary};
-        color: ${colors.terceary};
-      }
     }
 
     /* Floating */
 
     &.figure__align-right {
-      max-width: 33.333%;
       float: right;
       margin-left: 32px;
+
+      @media ${device.tabletLs} {
+        max-width: 33.333%;
+      }
     }
 
     &.figure__align-left {
-      max-width: 33.333%;
       float: left;
       margin-right: 32px;
+
+      @media ${device.tabletLs} {
+        max-width: 33.333%;
+      }
     }
 
     /* Image Caption */
@@ -113,11 +107,26 @@ export const Article = styled.article`
       color: ${colors.greyHeavy};
       font-style: oblique;
       text-align: center;
+    }
+  }
 
-      ::selection {
-        background-color: ${colors.terceary};
-        color: ${colors.primary};
-      }
+  /* selection */
+
+  p,
+  h2,
+  figcaption {
+    ::selection {
+      background-color: ${colors.terceary};
+      color: ${colors.primary};
+    }
+  }
+
+  em,
+  strong,
+  img {
+    ::selection {
+      background-color: ${colors.primary};
+      color: ${colors.terceary};
     }
   }
 `;
