@@ -79,7 +79,7 @@ export const Article = styled.article`
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
     }
 
-    /* Floating */
+    /* Figure - Floating */
 
     &.figure__align-right {
       float: right;
