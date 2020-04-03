@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 import colors from '~/styles/colors';
 import { device } from '~/styles/queries';
@@ -29,11 +30,6 @@ export const Article = styled.article`
   h5,
   h6 {
     margin-bottom: 16px;
-
-    ::selection {
-      background-color: ${colors.terceary};
-      color: ${colors.primary};
-    }
   }
 
   p {
@@ -43,18 +39,6 @@ export const Article = styled.article`
     line-height: 24px;
     text-align: left;
     color: ${colors.greyHeavy};
-
-    ::selection {
-      background-color: ${colors.terceary};
-      color: ${colors.primary};
-    }
-  }
-
-  a {
-    ::selection {
-      background-color: ${colors.primary};
-      color: ${colors.terceary};
-    }
   }
 
   strong {
@@ -113,19 +97,25 @@ export const Article = styled.article`
   /* selection */
 
   p,
+  h1,
   h2,
+  h3,
+  h4,
+  h5,
+  h6,
   figcaption {
     ::selection {
-      background-color: ${colors.terceary};
+      background-color: ${lighten(0.4, colors.primary)};
       color: ${colors.primary};
     }
   }
 
   em,
   strong,
+  a,
   img {
     ::selection {
-      background-color: ${colors.primary};
+      background-color: ${lighten(0.4, colors.primary)};
       color: ${colors.terceary};
     }
   }
