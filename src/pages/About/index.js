@@ -19,11 +19,14 @@ export default function About() {
             <p>
               Sed ut <strong>perspiciatis unde omnis</strong> iste natus error
               sit voluptatem accusantium doloremque laudantium, totam rem
-              aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-              architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-              voluptatem <em>quia voluptas sit aspernatur</em> aut odit aut
-              fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt.{' '}
+              aperiam,{' '}
+              <mark>
+                eaque ipsa quae ab illo inventore veritatis et quasi architecto
+              </mark>{' '}
+              beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem{' '}
+              <em>quia voluptas sit aspernatur</em> aut odit aut fugit, sed quia
+              consequuntur magni dolores eos qui ratione voluptatem sequi
+              nesciunt.{' '}
               <strong>
                 <em>Neque porro</em>
               </strong>{' '}
@@ -69,6 +72,12 @@ export default function About() {
               est, qui dolorem ipsum quia dolor sit amet, consectetur.
             </p>
 
+            <blockquote>
+              &ldquo;Build a future where people live in harmony with
+              nature&rdquo;.
+              <cite>Fabio Montone</cite>
+            </blockquote>
+
             <p>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -107,6 +116,14 @@ export default function About() {
               est, qui dolorem ipsum quia dolor sit amet, consectetur.
             </p>
 
+            <p>
+              I had not been aware, but according to <cite>Richard Kerr</cite>,
+              <q cite="//www.sciencemag.org/content/340/6136/1031">
+                Most robotic missions to Mars have failed
+              </q>
+              .
+            </p>
+
             <h4>Heading 4 test</h4>
 
             <p>
@@ -118,6 +135,60 @@ export default function About() {
               eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
               est, qui dolorem ipsum quia dolor sit amet, consectetur.
             </p>
+
+            <hr />
+
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum quia dolor sit amet, consectetur.
+            </p>
+
+            <ul>
+              <li>Coffee</li>
+              <li>Tea</li>
+              <li>Milk</li>
+            </ul>
+
+            <ol>
+              <li>Coffee</li>
+              <li>Tea</li>
+              <li>Milk</li>
+            </ol>
+
+            <ul>
+              <li>
+                Coffee
+                <ul>
+                  <li>Spresso</li>
+                  <li>
+                    Americano
+                    <ul>
+                      <li>Strong</li>
+                      <li>Regular</li>
+                      <li>Soft</li>
+                    </ul>
+                  </li>
+                  <li>Machiato</li>
+                  <li>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                    aut fugit, sed quia consequuntur magni dolores eos qui
+                    ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                    qui dolorem ipsum quia dolor sit amet, consectetur.
+                  </li>
+                </ul>
+              </li>
+              <li>Tea</li>
+              <li>Milk</li>
+            </ul>
           </section>
         </Article>
       </Container>

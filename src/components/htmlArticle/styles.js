@@ -12,13 +12,30 @@ export const Article = styled.article`
     padding: 0;
   }
 
-  /* Layout */
+  /**
+    TOC
+    #-Layout
+    #-Text
+    #-Lists
+    #-imagery
+    #-selection & Mark
+   */
+
+  /* #-Layout */
 
   header {
     margin-top: 32px;
   }
 
-  /* Text */
+  hr {
+    width: 40%;
+    height: 1px;
+    margin: 40px auto;
+    background-color: ${colors.greyHeavy};
+    border: none;
+  }
+
+  /* #-Text */
 
   p,
   h2 {
@@ -32,7 +49,9 @@ export const Article = styled.article`
     margin-bottom: 16px;
   }
 
-  p {
+  p,
+  ul,
+  ol {
     font-weight: 300;
     font-size: 17px;
     letter-spacing: -0.02em;
@@ -45,10 +64,52 @@ export const Article = styled.article`
     font-weight: 500;
   }
 
-  em {
+  /* Quotation */
+
+  blockquote {
+    position: relative;
+    margin: 32px;
+    padding: 16px;
+    font-size: 32px;
+    line-height: 36px;
+    font-style: oblique;
+    color: ${colors.greyHeavy};
+    border-radius: 12px;
+    background-color: ${colors.white};
+    overflow: hidden;
+
+    cite {
+      font-size: 24px;
+      display: block;
+      font-weight: 500;
+    }
   }
 
-  /* imagery */
+  q {
+    margin: 0 8px;
+    font-style: oblique;
+    color: ${colors.greyHeavy};
+    background-color: ${colors.white};
+    padding: 0 8px;
+    border-radius: 12px;
+  }
+
+  /* #-Lists */
+
+  ul,
+  ol {
+    margin-left: 32px;
+    margin-bottom: 32px;
+  }
+
+  ul > li > ul,
+  ul > li > ol,
+  ol > li > ol,
+  ol > li > ul {
+    margin-bottom: 0px;
+  }
+
+  /* #-imagery */
 
   figure {
     width: 100%;
@@ -59,7 +120,7 @@ export const Article = styled.article`
       width: 100%;
       max-width: 100%;
       padding: 12px;
-      background: #fff;
+      background: ${colors.white};
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
     }
 
@@ -94,7 +155,7 @@ export const Article = styled.article`
     }
   }
 
-  /* selection */
+  /* #-selection & Mark */
 
   p,
   h1,
@@ -113,10 +174,20 @@ export const Article = styled.article`
   em,
   strong,
   a,
-  img {
+  img,
+  blockquote,
+  blockquote,
+  cite,
+  q,
+  q > cite {
     ::selection {
       background-color: ${lighten(0.4, colors.primary)};
       color: ${colors.terceary};
     }
+  }
+
+  mark {
+    background-color: ${lighten(0.2, colors.terceary)};
+    color: ${colors.black};
   }
 `;

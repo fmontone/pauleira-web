@@ -25,7 +25,7 @@ export default createGlobalStyle`
    text-rendering: optimizeLegibility;
  }
 
- body, input, button, select, textarea {
+ body, input, button, select, textarea, ul, ol {
    font-family: 'Rubik', Arial, Helvetica, sans-serif;
    font-weight: 300;
    color: ${colors.black};
