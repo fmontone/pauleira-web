@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 import { Button } from './styles';
 import colors from '~/styles/colors';
@@ -20,9 +21,23 @@ export default function ButtonCustom({
   color,
   width,
   size,
+  navTo,
 }) {
+  const history = useHistory();
+
+  function handleClick() {
+    if (navTo) history.push(navTo);
+  }
+
   return (
-    <Button type={type} model={model} size={size} color={color} width={width}>
+    <Button
+      onClick={handleClick}
+      type={type}
+      model={model}
+      size={size}
+      color={color}
+      width={width}
+    >
       {children}
     </Button>
   );
@@ -45,6 +60,7 @@ ButtonCustom.propTypes = {
   size: PropTypes.oneOf(['regular', 'small', 'large']),
   color: PropTypes.string,
   width: PropTypes.oneOf(['auto', 'stretch']),
+  navTo: PropTypes.string,
 };
 
 ButtonCustom.defaultProps = {
@@ -53,4 +69,5 @@ ButtonCustom.defaultProps = {
   size: 'regular',
   color: colors.primary,
   width: 'auto',
+  navTo: null,
 };

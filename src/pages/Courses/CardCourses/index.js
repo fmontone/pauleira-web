@@ -72,7 +72,9 @@ export default function CardCourses() {
       <div className="card-slider">
         <div className="card-slider__card">
           <h3>Setup Básico</h3>
-          <ButtonCustom color="#fff">Saiba Mais</ButtonCustom>
+          <ButtonCustom color="#fff" navTo="/cursos/setup-basico">
+            Saiba Mais
+          </ButtonCustom>
           <div className="card-slider__overlay" />
           <img
             src={PaulaBifulco}
