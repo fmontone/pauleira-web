@@ -20,23 +20,23 @@ function App() {
   ]);
 
   function updateActivePage() {
-    const location = window.location.pathname.split('/')[1];
-    setActivePage(location || 'home');
+    const location = window.location.pathname;
+    setActivePage(location || '/');
   }
 
   // TRIGGERS when page history changes
-  window.onpopstate = () => updateActivePage();
 
   useEffect(() => {
     updateActivePage();
-  }, []);
+    window.onpopstate = () => updateActivePage();
+  });
 
   return (
     <Router history={history}>
       <GlobalStyles />
       <ActivePageContext.Provider value={providerActivePage}>
-        <PageWrapper isMainPage={activePage === 'home'}>
-          <NavBar isMainPage={activePage === 'home'} />
+        <PageWrapper isMainPage={activePage === '/'}>
+          <NavBar isMainPage={activePage === '/'} />
           <Routes />
           {activePage !== 'home' && <Footer />}
         </PageWrapper>

@@ -24,7 +24,6 @@ export default function ButtonCustom({
   navTo,
 }) {
   const history = useHistory();
-
   function handleClick() {
     if (navTo) history.push(navTo);
   }

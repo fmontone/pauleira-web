@@ -10,12 +10,17 @@ export const Container = styled(ContainerCustom)`
 `;
 
 export const Timing = styled(Card)`
+  max-width: 760px;
+  min-width: 260px;
+  margin: 0 auto;
+  color: ${colors.white};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 16px;
   margin-bottom: 32px;
+  background-color: ${colors.statusInfo};
 
   .timing {
     &__line {
@@ -27,7 +32,7 @@ export const Timing = styled(Card)`
 
       :first-child {
         padding-bottom: 16px;
-        border-bottom: 1px solid ${colors.greyLight};
+        border-bottom: 1px solid ${colors.white};
         margin-bottom: 16px;
       }
     }
@@ -50,7 +55,6 @@ export const Timing = styled(Card)`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      color: ${colors.statusInfo};
 
       span {
         display: block;
