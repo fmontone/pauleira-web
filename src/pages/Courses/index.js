@@ -2,6 +2,7 @@ import React from 'react';
 
 import PageTitle from '~/components/PageTitle';
 import Article from '~/components/htmlArticle';
+
 import { Container, Timing } from './styles';
 
 import CardCourses from './CardCourses';

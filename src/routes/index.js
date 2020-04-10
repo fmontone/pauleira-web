@@ -16,7 +16,24 @@ export default function Routes() {
       <Route path="/sobre" component={About} />
 
       <Route path="/cursos" exact component={Courses} />
-      <Route path="/cursos/setup-basico" component={Course} />
+
+      <Route
+        path="/cursos/setup-regulagem-guitarra-basico"
+        component={Course}
+      />
+      <Route
+        path="/cursos/setup-regulagem-guitarra-avancado"
+        component={Course}
+      />
+      <Route
+        path="/cursos/construcao-de-guitarra-braco-parafusado"
+        component={Course}
+      />
+      <Route
+        path="/cursos/construcao-de-guitarra-braco-colado"
+        component={Course}
+      />
+      <Route path="/cursos/curso-livre-de-luthieria" component={Course} />
 
       <Route path="/galeria" component={Gallery} />
       <Route path="/contato" component={Contact} />

@@ -56,8 +56,8 @@ export default function NavBar({ isMainPage }) {
             <li>
               <Link
                 to="/"
-                className={activePage === 'home' ? 'isActive' : ''}
-                onClick={() => setActivePage('home')}
+                className={activePage === '/' ? 'isActive' : ''}
+                onClick={() => setActivePage('/')}
               >
                 Home
               </Link>
@@ -65,8 +65,8 @@ export default function NavBar({ isMainPage }) {
             <li>
               <Link
                 to="/sobre"
-                onClick={() => setActivePage('sobre')}
-                className={activePage === 'sobre' ? 'isActive' : ''}
+                onClick={() => setActivePage('/sobre')}
+                className={activePage === '/sobre' ? 'isActive' : ''}
               >
                 Sobre
               </Link>
@@ -74,8 +74,8 @@ export default function NavBar({ isMainPage }) {
             <li>
               <Link
                 to="/cursos"
-                onClick={() => setActivePage('cursos')}
-                className={activePage === 'cursos' ? 'isActive' : ''}
+                onClick={() => setActivePage('/cursos')}
+                className={activePage === '/cursos' ? 'isActive' : ''}
               >
                 Cursos
               </Link>
@@ -83,8 +83,8 @@ export default function NavBar({ isMainPage }) {
             <li>
               <Link
                 to="/galeria"
-                onClick={() => setActivePage('galeria')}
-                className={activePage === 'galeria' ? 'isActive' : ''}
+                onClick={() => setActivePage('/galeria')}
+                className={activePage === '/galeria' ? 'isActive' : ''}
               >
                 Galeria
               </Link>
@@ -92,8 +92,8 @@ export default function NavBar({ isMainPage }) {
             <li>
               <Link
                 to="/contato"
-                onClick={() => setActivePage('contato')}
-                className={activePage === 'contato' ? 'isActive' : ''}
+                onClick={() => setActivePage('/contato')}
+                className={activePage === '/contato' ? 'isActive' : ''}
               >
                 Contato
               </Link>
@@ -101,8 +101,8 @@ export default function NavBar({ isMainPage }) {
             <li>
               <Link
                 to="/endereco"
-                onClick={() => setActivePage('endereco')}
-                className={activePage === 'endereco' ? 'isActive' : ''}
+                onClick={() => setActivePage('/endereco')}
+                className={activePage === '/endereco' ? 'isActive' : ''}
               >
                 Endereço
               </Link>

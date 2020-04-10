@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+
+import { ActivePageContext } from '~/contexts/ActivePageContext';
 
 import { Button } from './styles';
 import colors from '~/styles/colors';
@@ -24,8 +26,13 @@ export default function ButtonCustom({
   navTo,
 }) {
   const history = useHistory();
+  const { _, setActivePage } = useContext(ActivePageContext); /* eslint-disable-line */
+
   function handleClick() {
-    if (navTo) history.push(navTo);
+    if (navTo) {
+      history.push(navTo);
+      setActivePage(navTo);
+    }
   }
 
   return (

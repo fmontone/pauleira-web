@@ -72,7 +72,10 @@ export default function CardCourses() {
       <div className="card-slider">
         <div className="card-slider__card">
           <h3>Setup Básico</h3>
-          <ButtonCustom color="#fff" navTo="/cursos/setup-basico">
+          <ButtonCustom
+            color="#fff"
+            navTo="/cursos/setup-regulagem-guitarra-basico"
+          >
             Saiba Mais
           </ButtonCustom>
           <div className="card-slider__overlay" />
@@ -82,8 +85,13 @@ export default function CardCourses() {
           />
         </div>
         <div className="card-slider__card">
-          <h3>Setup Básico</h3>
-          <ButtonCustom color="#fff">Saiba Mais</ButtonCustom>
+          <h3>Setup Avançado</h3>
+          <ButtonCustom
+            color="#fff"
+            navTo="/cursos/setup-regulagem-guitarra-avancado"
+          >
+            Saiba Mais
+          </ButtonCustom>
           <div className="card-slider__overlay" />
           <img
             src={PaulaBifulco}
@@ -91,8 +99,13 @@ export default function CardCourses() {
           />
         </div>
         <div className="card-slider__card">
-          <h3>Setup Básico</h3>
-          <ButtonCustom color="#fff">Saiba Mais</ButtonCustom>
+          <h3>Construção I</h3>
+          <ButtonCustom
+            color="#fff"
+            navTo="/cursos/construcao-de-guitarra-braco-parafusado"
+          >
+            Saiba Mais
+          </ButtonCustom>
           <div className="card-slider__overlay" />
           <img
             src={PaulaBifulco}
@@ -100,8 +113,13 @@ export default function CardCourses() {
           />
         </div>
         <div className="card-slider__card">
-          <h3>Setup Básico</h3>
-          <ButtonCustom color="#fff">Saiba Mais</ButtonCustom>
+          <h3>Construcao II</h3>
+          <ButtonCustom
+            color="#fff"
+            navTo="/cursos/construcao-de-guitarra-braco-colado"
+          >
+            Saiba Mais
+          </ButtonCustom>
           <div className="card-slider__overlay" />
           <img
             src={PaulaBifulco}
@@ -109,8 +127,10 @@ export default function CardCourses() {
           />
         </div>
         <div className="card-slider__card">
-          <h3>Setup Básico</h3>
-          <ButtonCustom color="#fff">Saiba Mais</ButtonCustom>
+          <h3>Curso Livre</h3>
+          <ButtonCustom color="#fff" navTo="/cursos/curso-livre-de-luthieria">
+            Saiba Mais
+          </ButtonCustom>
           <div className="card-slider__overlay" />
           <img
             src={PaulaBifulco}

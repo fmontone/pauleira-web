@@ -28,6 +28,12 @@ export const Container = styled(ContainerCustom)`
 
 export const Title = styled.h1`
   color: ${colors.greyLighter};
+
+  span {
+    display: block;
+    font-size: 19px;
+    line-height: 24px;
+  }
 `;
 
 export const BgImage = styled.img`
