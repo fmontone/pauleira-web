@@ -32,6 +32,7 @@ export default function ButtonCustom({
     if (navTo) {
       history.push(navTo);
       setActivePage(navTo);
+      window.scrollTo(0, 0);
     }
   }
 

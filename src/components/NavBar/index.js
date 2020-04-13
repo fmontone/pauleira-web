@@ -26,8 +26,9 @@ export default function NavBar({ isMainPage }) {
 
   const { windowWidth } = useWindowSize();
 
-  function handleMenu() {
+  function handleMenuToggle() {
     setMenu(!menu);
+    window.scrollTo(0, 0);
   }
 
   return (
@@ -46,13 +47,13 @@ export default function NavBar({ isMainPage }) {
         {windowWidth < breakePoint.tabletLs && <QuickLinks />}
 
         <Navigation>
-          <NavToggler menu={menu} onClick={handleMenu}>
+          <NavToggler menu={menu} onClick={handleMenuToggle}>
             <div className={menu ? 'open' : ''} />
             <div className={menu ? 'open' : ''} />
             <div className={menu ? 'open' : ''} />
           </NavToggler>
 
-          <Menu menu={menu} onClick={handleMenu}>
+          <Menu menu={menu} onClick={handleMenuToggle}>
             <li>
               <Link
                 to="/"
