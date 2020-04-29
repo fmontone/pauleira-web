@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { ActivePageContext } from '~/contexts/ActivePageContext';
+import { ActivePageContext } from '~/contexts';
 import { useWindowSize } from '~/hooks/useWindowSize';
 
 import Icon from '~/components/Icon';
@@ -83,9 +83,9 @@ export default function NavBar({ isMainPage }) {
             </li>
             <li>
               <Link
-                to="/galeria"
-                onClick={() => setActivePage('/galeria')}
-                className={activePage === '/galeria' ? 'isActive' : ''}
+                to="/galerias"
+                onClick={() => setActivePage('/galerias')}
+                className={activePage === '/galerias' ? 'isActive' : ''}
               >
                 Galeria
               </Link>

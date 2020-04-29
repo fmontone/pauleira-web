@@ -4,7 +4,7 @@ import { Router } from 'react-router-dom';
 import Routes from './routes';
 import history from '~/services/history';
 
-import { ActivePageContext } from '~/contexts/ActivePageContext';
+import { ActivePageContext } from '~/contexts';
 import GlobalStyles from '~/styles/global';
 
 import NavBar from '~/components/NavBar';

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { ActivePageContext } from '~/contexts/ActivePageContext';
+import { ActivePageContext } from '~/contexts';
 
 import CourseSetupBasico from './CourseSetupBasico';
 import CourseSetupAvancado from './CourseSetupAvancado';

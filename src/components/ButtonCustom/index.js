@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-import { ActivePageContext } from '~/contexts/ActivePageContext';
+import { ActivePageContext } from '~/contexts';
 
 import { Button } from './styles';
 import colors from '~/styles/colors';
@@ -24,6 +24,7 @@ export default function ButtonCustom({
   width,
   size,
   navTo,
+  ...props
 }) {
   const history = useHistory();
   const { _, setActivePage } = useContext(ActivePageContext); /* eslint-disable-line */
@@ -44,6 +45,7 @@ export default function ButtonCustom({
       size={size}
       color={color}
       width={width}
+      {...props}
     >
       {children}
     </Button>

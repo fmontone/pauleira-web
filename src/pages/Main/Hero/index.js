@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 import history from '~/services/history';
-import { ActivePageContext } from '~/contexts/ActivePageContext';
+import { ActivePageContext } from '~/contexts';
 import { useWindowSize } from '~/hooks/useWindowSize';
 import { windowSize } from '~/styles/queries';
 
