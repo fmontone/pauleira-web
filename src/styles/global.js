@@ -86,4 +86,8 @@ export default createGlobalStyle`
    border: none;
  }
 
+ .body-overflow-hidden {
+   overflow: hidden;
+ }
+
 `;

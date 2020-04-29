@@ -5,7 +5,7 @@ import Main from '~/pages/Main';
 import About from '~/pages/About';
 import Courses from '~/pages/Courses';
 import Course from '~/pages/Course';
-import Gallery from '~/pages/Gallery';
+import Galleries from '~/pages/Galleries';
 import Contact from '~/pages/Contact';
 import Address from '~/pages/Address';
 
@@ -35,7 +35,16 @@ export default function Routes() {
       />
       <Route path="/cursos/curso-livre-de-luthieria" component={Course} />
 
-      <Route path="/galeria" component={Gallery} />
+      <Route
+        path="/galerias"
+        exact
+        render={props => <Galleries {...props} />}
+      />
+      <Route
+        path="/galerias/:id/:title"
+        render={props => <Galleries {...props} modalGallery />}
+      />
+
       <Route path="/contato" component={Contact} />
       <Route path="/endereco" component={Address} />
     </Switch>
