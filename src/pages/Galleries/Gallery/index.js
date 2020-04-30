@@ -31,7 +31,9 @@ export default function Gallery() {
       <Container>
         <header>
           <h1>Johnny Ramone Tribute Amazing</h1>
-          <h4>By Pauleira Guitars</h4>
+          <h4>
+            By <span>Pauleira Guitars</span>
+          </h4>
           <CloseGallery
             onClick={() => {
               history.push('/galerias');
@@ -109,7 +111,7 @@ export default function Gallery() {
           <ShareBlock />
         </section>
         <section className="gallery__text">
-          <Article>
+          <Article padding="0">
             <p>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PageTitle from '~/components/PageTitle';
-import Article from '~/components/htmlArticle';
+import ArticleCustom from '~/components/ArticleCustom';
 
 import { Container } from './styles';
 
@@ -12,7 +12,7 @@ export default function CourseSetupBasico() {
         <span>Cursos/</span>Setup Basico
       </PageTitle>
       <Container>
-        <Article>
+        <ArticleCustom>
           <h2>
             Aprenda a regular guitarras e contrabaixos trazendo seus poróprios
             instrumentos
@@ -36,7 +36,7 @@ export default function CourseSetupBasico() {
             <li>Regulagem de oitavas com troca de cordas</li>
             <li>Revisão eletrônica simples</li>
           </ul>
-        </Article>
+        </ArticleCustom>
       </Container>
     </>
   );

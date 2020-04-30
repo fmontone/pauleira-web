@@ -3,18 +3,20 @@ import PropTypes from 'prop-types';
 
 import { Article } from './styles';
 
-export default function htmlArticle({ children }) {
-  return <Article>{children}</Article>;
+export default function ArticleCustom({ children, padding }) {
+  return <Article padding={padding}>{children}</Article>;
 }
 
-htmlArticle.propTypes = {
+ArticleCustom.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.element,
     PropTypes.node,
   ]),
+  padding: PropTypes.string,
 };
 
-htmlArticle.defaultProps = {
+ArticleCustom.defaultProps = {
   children: '',
+  padding: '16px',
 };

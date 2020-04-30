@@ -5,7 +5,7 @@ import colors from '~/styles/colors';
 import { device } from '~/styles/queries';
 
 export const Article = styled.article`
-  padding: 0 16px;
+  padding: ${props => `0 ${props.padding}`};
   margin-bottom: 32px;
 
   @media ${device.laptop} {

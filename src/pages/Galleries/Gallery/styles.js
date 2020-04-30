@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 
 import ContainerCustom from '~/components/ContainerCustom';
-import htmlArticle from '~/components/htmlArticle';
+import ArticleCustom from '~/components/ArticleCustom';
 
 import colors from '~/styles/colors';
 import { device } from '~/styles/queries';
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${transparentize(0.12, '#1c1c1c')};
+  background-color: ${transparentize(0.1, colors.greyLighter)};
   overflow-y: scroll;
 
   z-index: 500;
@@ -29,9 +29,11 @@ export const Container = styled(ContainerCustom)`
   max-width: 760px !important;
   flex: 1;
   border-radius: 0;
-  background-color: ${colors.black};
+  padding: 16px;
+  background-color: ${colors.greyLighter};
 
   @media ${device.tabletLs} {
+    padding: 32px;
     border-radius: 12px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.32);
   }
@@ -42,19 +44,19 @@ export const Container = styled(ContainerCustom)`
 
   h1 {
     margin: 0 50px 8px 0;
-    color: ${colors.grey};
-    font-size: 32px;
+    color: ${colors.black};
+    font-size: 24px;
     letter-spacing: -0.04em;
     line-height: 36px;
   }
 
-  h4 {
-    color: ${colors.greyHeavy};
+  h4 > span {
+    color: ${colors.statusInfo};
   }
 
   /* Section */
   .gallery__social {
-    padding: 16px;
+    padding: 16px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,7 +65,6 @@ export const Container = styled(ContainerCustom)`
 
   .gallery__text {
     width: 100%;
-    padding: 16px;
   }
 
   .gallery__nav {
@@ -87,7 +88,6 @@ export const BigPicture = styled.div`
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  background-color: blueviolet;
 
   .big-picture__wrapper {
     position: absolute;
@@ -95,8 +95,8 @@ export const BigPicture = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background-color: aquamarine;
     overflow: hidden;
+    border-radius: 12px;
   }
 
   img {
@@ -116,10 +116,7 @@ export const ExpandPicture = styled.div`
   cursor: pointer;
 `;
 
-export const Article = styled(htmlArticle)`
-  color: ${colors.greyMedium};
-  padding: 16px;
-`;
+export const Article = styled(ArticleCustom)``;
 
 export const PostNav = styled.div`
   flex: 1;

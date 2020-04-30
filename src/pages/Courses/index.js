@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PageTitle from '~/components/PageTitle';
-import Article from '~/components/htmlArticle';
+import ArticleCustom from '~/components/ArticleCustom';
 
 import { Container, Timing } from './styles';
 
@@ -12,7 +12,7 @@ export default function Courses() {
     <>
       <PageTitle>Cursos</PageTitle>
       <Container>
-        <Article>
+        <ArticleCustom>
           <header>
             <h2>Luthieria: regulagens e construção de instrumentos</h2>
           </header>
@@ -50,7 +50,7 @@ export default function Courses() {
 
             <CardCourses />
           </section>
-        </Article>
+        </ArticleCustom>
       </Container>
     </>
   );

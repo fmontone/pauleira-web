@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 import colors from '~/styles/colors';
+import { devices } from '~/styles/queries';
 
 export const PictureSelector = styled.div`
   width: auto;
-  padding: 16px;
+  padding: 16px 0;
   overflow: hidden;
   border-bottom: 1px solid ${colors.greyHeavy};
 
