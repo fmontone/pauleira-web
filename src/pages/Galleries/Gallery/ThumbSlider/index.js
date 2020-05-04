@@ -5,7 +5,7 @@ import useCardSlider from '~/hooks/useCardSlider';
 
 import { PictureSelector } from './styles';
 
-export default function ThumbSlider({ children }) {
+export default function ThumbSlider({ children, zoom }) {
   const slider = useRef();
   const cardSlider = useCardSlider(slider);
 
@@ -19,6 +19,7 @@ export default function ThumbSlider({ children }) {
       onTouchStart={e => cardSlider.mouseDown(e)}
       onTouchMove={e => cardSlider.mouseMove(e)}
       onTouchEnd={e => cardSlider.mouseUp(e)}
+      zoom={zoom}
     >
       <div className="picture-selector__wrapper">
         <ul>{children}</ul>
@@ -33,4 +34,5 @@ ThumbSlider.propTypes = {
     PropTypes.element,
     PropTypes.func,
   ]).isRequired,
+  zoom: PropTypes.bool.isRequired,
 };

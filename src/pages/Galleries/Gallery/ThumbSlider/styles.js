@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import colors from '~/styles/colors';
 import { devices } from '~/styles/queries';
@@ -7,7 +7,13 @@ export const PictureSelector = styled.div`
   width: auto;
   padding: 16px 0;
   overflow: hidden;
-  border-bottom: 1px solid ${colors.greyHeavy};
+  border-bottom: 1px solid ${colors.greyLight};
+
+  ${props =>
+    props.zoom &&
+    css`
+      display: none;
+    `}
 
   .picture-selector__wrapper {
     position: relative;

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   MdFullscreen,
+  MdFullscreenExit,
   MdChevronLeft,
   MdChevronRight,
   MdClose,
@@ -19,6 +20,7 @@ import {
   Wrapper,
   Container,
   CloseGallery,
+  ClickWrapper,
   BigPicture,
   ExpandPicture,
   Article,
@@ -26,35 +28,57 @@ import {
 } from './styles';
 
 export default function Gallery() {
+  const [zoom, setZoom] = useState(false);
+
   return (
     <Wrapper>
+      <CloseGallery
+        onClick={() => {
+          history.push('/galerias');
+        }}
+        zoom={zoom}
+      >
+        <MdClose size="32px" color={colors.greyHeavy} />
+      </CloseGallery>
+      <ClickWrapper
+        onClick={e => {
+          e.stopPropagation();
+          history.push('/galerias');
+        }}
+      />
+
       <Container>
         <header>
           <h1>Johnny Ramone Tribute Amazing</h1>
           <h4>
             By <span>Pauleira Guitars</span>
           </h4>
-          <CloseGallery
-            onClick={() => {
-              history.push('/galerias');
-            }}
-          >
-            <MdClose size="24px" color={colors.secondary} />
-          </CloseGallery>
         </header>
         <section className="gallery__images">
-          <BigPicture>
+          <BigPicture zoom={zoom}>
             <div className="big-picture__wrapper">
               <img
                 src="https://cdn.pixabay.com/photo/2017/10/30/16/38/music-2902891_960_720.jpg"
                 alt="Guitarra Maluca"
               />
-              <ExpandPicture role="button">
-                <MdFullscreen size="48px" color="#fff" />
+              <ExpandPicture role="button" zoom={zoom}>
+                {!zoom ? (
+                  <MdFullscreen
+                    size="24px"
+                    color="#fff"
+                    onClick={() => setZoom(!zoom)}
+                  />
+                ) : (
+                  <MdFullscreenExit
+                    size="24px"
+                    color="#fff"
+                    onClick={() => setZoom(!zoom)}
+                  />
+                )}
               </ExpandPicture>
             </div>
           </BigPicture>
-          <ThumbSlider>
+          <ThumbSlider zoom={zoom}>
             <li>
               <img
                 src="https://cdn.pixabay.com/photo/2017/10/30/16/38/music-2902891_960_720.jpg"
@@ -145,13 +169,13 @@ export default function Gallery() {
           </Article>
         </section>
         <section className="gallery__nav">
-          <PostNav>
+          <PostNav onClick={() => history.push('/galerias/2/galeria-teste')}>
             <span>
               <MdChevronLeft color={colors.terceary} />
             </span>
             Guitarra Les Paul V8 Little Darling Amazing
           </PostNav>
-          <PostNav>
+          <PostNav onClick={() => history.push('/galerias/3/galeria-teste')}>
             Johnny Ramone Tribute e se o texto for de duas linhas{' '}
             <span>
               <MdChevronRight color={colors.terceary} />
