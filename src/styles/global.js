@@ -84,6 +84,7 @@ export default createGlobalStyle`
 
  button {
    border: none;
+   cursor: pointer;
  }
 
  .body-overflow-hidden {

@@ -14,7 +14,7 @@ export default function CardCourses() {
   return (
     <Container
       ref={slider}
-      onMouseDown={e => useCardSlider.onMouseDown(e)}
+      onMouseDown={e => cardSlider.mouseDown(e)}
       onMouseLeave={cardSlider.mouseLeave}
       onMouseUp={e => cardSlider.mouseUp(e)}
       onMouseMove={e => cardSlider.mouseMove(e)}
