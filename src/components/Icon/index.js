@@ -13,6 +13,8 @@ import SocialPinterest from './SocialPinterest';
 import SocialLink from './SocialLink';
 import SettingsBlock from './SettingsBlock';
 import SettingsList from './SettingsList';
+import ColorWaze from './ColorWaze';
+import ColorMaps from './ColorMaps';
 
 export default function Icon({ name, color, size }) {
   switch (name) {
@@ -42,6 +44,10 @@ export default function Icon({ name, color, size }) {
       return <SettingsBlock name color={color} size={size} />;
     case 'settings-list':
       return <SettingsList name color={color} size={size} />;
+    case 'color-waze':
+      return <ColorWaze name color={color} size={size} />;
+    case 'color-maps':
+      return <ColorMaps name color={color} size={size} />;
     default:
   }
 }
