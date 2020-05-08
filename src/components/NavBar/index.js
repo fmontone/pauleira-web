@@ -99,15 +99,6 @@ export default function NavBar({ isMainPage }) {
                 Contato
               </Link>
             </li>
-            <li>
-              <Link
-                to="/endereco"
-                onClick={() => setActivePage('/endereco')}
-                className={activePage === '/endereco' ? 'isActive' : ''}
-              >
-                Endereço
-              </Link>
-            </li>
           </Menu>
         </Navigation>
       </Container>

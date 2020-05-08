@@ -7,7 +7,6 @@ import Courses from '~/pages/Courses';
 import Course from '~/pages/Course';
 import Galleries from '~/pages/Galleries';
 import Contact from '~/pages/Contact';
-import Address from '~/pages/Address';
 
 export default function Routes() {
   return (
@@ -46,7 +45,6 @@ export default function Routes() {
       />
 
       <Route path="/contato" component={Contact} />
-      <Route path="/endereco" component={Address} />
     </Switch>
   );
 }

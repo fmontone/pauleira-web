@@ -88,7 +88,7 @@ export const NavToggler = styled.button`
   cursor: pointer;
   z-index: 100;
 
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: ${props => (props.menu ? 'rotate(-180deg)' : 'rotate(0deg)')};
 
   @media ${device.tabletLs} {
