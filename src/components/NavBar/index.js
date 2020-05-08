@@ -35,7 +35,7 @@ export default function NavBar({ isMainPage }) {
     <Header data-testid="NavBar" isMainPage={isMainPage}>
       <Container>
         <Logo size={windowWidth < breakePoint.tabletLs ? 'small' : 'large'}>
-          <Link to="/">
+          <Link to="/" onClick={() => setActivePage('/')}>
             {windowWidth < breakePoint.tabletLs ? (
               <Icon name="logo-flying-p" color={colors.greyLighter} />
             ) : (
