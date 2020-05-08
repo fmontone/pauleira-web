@@ -43,6 +43,10 @@ const loggoLarge = css`
   img {
     width: 106px;
   }
+
+  &:active {
+    transform: translate(0.5px, 0.5px);
+  }
 `;
 
 export const Logo = styled.div`
@@ -55,6 +59,10 @@ export const Logo = styled.div`
     props.size === 'small' ? 'center' : 'flex-start'};
 
   ${props => props.size === 'large' && loggoLarge}
+
+  &:active {
+    transform: translate(0.5px, 0.5px);
+  }
 `;
 
 export const Navigation = styled.nav`
@@ -115,6 +123,10 @@ export const NavToggler = styled.button`
       top: 2px;
       left: 2px;
     }
+  }
+
+  &:active {
+    transform: translate(0.5px, 0.5px);
   }
 `;
 
@@ -186,6 +198,10 @@ export const Menu = styled.ul`
 
       :hover {
         color: ${colors.secondary};
+      }
+
+      &:active {
+        transform: translate(0.5px, 0.5px);
       }
     }
   }
