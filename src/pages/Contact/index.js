@@ -14,6 +14,7 @@ export default function Contact() {
         <h2>Atendemos somente com hora marcada</h2>
         <section>
           <div className="contact__info">
+            <h4>Dados de Contato</h4>
             <p>
               <span>
                 <IoLogoWhatsapp color="4fce5d" />
@@ -25,6 +26,7 @@ export default function Contact() {
             </p>
           </div>
           <div className="contact__address">
+            <h4>Endereço</h4>
             <p>
               Rua Farrapos, 11 <br />
               Jd Petropolis <br />
@@ -34,7 +36,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 href="https://www.google.com/search?tbm=lcl&ei=bVCwXtrfOrPY5OUPjMypiAk&q=luthier+pauleira&oq=Luthier+Pauleira&gs_l=psy-ab.1.0.0i22i30k1.5067.6269.0.7907.9.8.0.0.0.0.305.694.0j1j1j1.3.0....0...1c.1.64.psy-ab..6.3.692...0j0i273k1.0.yDfxIpNYnSc#rlfi=hd:;si:15993977676823467806;mv:[[-23.629702667160778,-46.68297569528427],[-23.63354094375833,-46.68819527402725],null,[-23.631621819522753,-46.68558548465576],18]"
               >
-                Ver no Google Maps <FiExternalLink />
+                Abrir Google Maps <FiExternalLink />
               </a>
             </p>
           </div>

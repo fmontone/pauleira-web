@@ -24,6 +24,15 @@ export const Container = styled(ContainerCustom)`
     @media ${device.tabletLs} {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    h4 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 8px;
     }
 
     .contact__info {
@@ -44,6 +53,11 @@ export const Container = styled(ContainerCustom)`
     .contact__address {
       width: 100%;
       margin-bottom: 32px;
+
+      a {
+        display: block;
+        margin-top: 8px;
+      }
 
       @media ${device.tabletLs} {
         width: auto;
