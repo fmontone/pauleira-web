@@ -5,9 +5,11 @@ import colors from '~/styles/colors';
 const height = { small: '16px', regular: '32px', large: '64px' };
 
 export const Button = styled.button`
+  position: relative;
   width: ${props => (props.width === 'stretch' ? '100%' : 'auto')};
   height: ${props => height[props.size]};
   padding: 0 32px;
+  overflow: hidden;
 
   text-transform: ${props =>
     props.model === 'callToAction' ? 'uppercase' : 'unset'};
@@ -67,4 +69,19 @@ export const Button = styled.button`
     props.model === 'inactive' || props.model === 'inactiveOutline'
       ? 'unset'
       : 'pointer'};
+
+  &:active {
+    transform: translate(0.5px, 0.5px);
+  }
+`;
+
+export const FeedBack = styled.div`
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
 `;

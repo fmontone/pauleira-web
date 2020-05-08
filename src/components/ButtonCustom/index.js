@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
+import useButtonFeedback from '~/hooks/useButtonFeedback';
+
 import { ActivePageContext } from '~/contexts';
 
-import { Button } from './styles';
+import { Button, FeedBack } from './styles';
 import colors from '~/styles/colors';
 
 /**
- * Renders a buttom with defaut or given parameters
- * @param {String('button'|'submit')} type  Default: button
- * @param {String}  model default: regular Options: ['regular', 'outline', 'callToAction', 'inactive', 'inactiveOutline]
- * @param {String('small'|'regular'|'large')}  size default: regular
- * @param {String}  color default: colors.primary
- * @param {String('auto'|'stretch')}  width default: auto
+ * @param {String('button'|'submit')} type
+ * @param {String}  model
+ * @param {String('small'|'regular'|'large')}  size
+ * @param {String}  color
+ * @param {String('auto'|'stretch')}  width
  */
 
 export default function ButtonCustom({
@@ -29,7 +30,12 @@ export default function ButtonCustom({
   const history = useHistory();
   const { _, setActivePage } = useContext(ActivePageContext); /* eslint-disable-line */
 
+  const circleSpan = useRef();
+  const animateFeedback = useButtonFeedback(circleSpan);
+
   function handleClick() {
+    animateFeedback.play(10);
+
     if (navTo) {
       history.push(navTo);
       setActivePage(navTo);
@@ -39,7 +45,7 @@ export default function ButtonCustom({
 
   return (
     <Button
-      onClick={handleClick}
+      onClick={() => handleClick()}
       type={type}
       model={model}
       size={size}
@@ -47,7 +53,8 @@ export default function ButtonCustom({
       width={width}
       {...props}
     >
-      {children}
+      <span>{children}</span>
+      <FeedBack ref={circleSpan} />
     </Button>
   );
 }
