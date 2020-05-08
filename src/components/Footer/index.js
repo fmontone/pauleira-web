@@ -15,7 +15,12 @@ export default function Footer() {
       <Salve>
         <h2>Let&apos;s Rock</h2>
         <p>Mande um salve para a Pauleira:</p>
-        <ButtonCustom model="callToAction">Abrir Whatsapp</ButtonCustom>
+        <ButtonCustom
+          model="callToAction"
+          onClick={() => window.open('https://wa.me/5511983714260', '_blank')}
+        >
+          Abrir Whatsapp
+        </ButtonCustom>
       </Salve>
 
       {windowWidth >= breakePoint.tabletLs && (

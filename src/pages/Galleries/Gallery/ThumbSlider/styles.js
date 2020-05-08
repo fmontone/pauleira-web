@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import colors from '~/styles/colors';
-import { devices } from '~/styles/queries';
 
 export const PictureSelector = styled.div`
   width: auto;

@@ -28,10 +28,17 @@ export const BlockOne = styled.div`
   height: 32px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const DropDownWrapper = styled.div`
-  width: 160px;
+  select {
+    width: 250px;
+    height: 32px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid ${colors.greyLight};
+  }
 `;
 
 export const DisplaySettings = styled.div`

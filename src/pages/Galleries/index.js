@@ -60,8 +60,6 @@ export default function Galleries({ modalGallery }) {
           <Settings>
             <BlockOne>
               <DropDownWrapper>
-                {/* <DropDown ref={} options={dropOptions} /> */}
-
                 <select onChange={e => handleDropDownChange(e)}>
                   {dropOptions.map((item, index) => {
                     return <option key={String(index)}>{item}</option>;
