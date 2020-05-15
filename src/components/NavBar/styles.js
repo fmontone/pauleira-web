@@ -8,7 +8,7 @@ const isAndroid = new RegExp('Android').test(navigator.userAgent);
 
 export const Header = styled.header`
   width: 100%;
-  height: 48px;
+  height: 64px;
   position: fixed;
   bottom: 0;
   background: ${props => (props.isMainPage ? '#0A0012' : colors.black)};
@@ -28,6 +28,7 @@ export const Header = styled.header`
 export const Container = styled(ContainerCustom)`
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   flex-flow: row-reverse;
 
@@ -50,8 +51,8 @@ const loggoLarge = css`
 `;
 
 export const Logo = styled.div`
-  width: ${props => (props.size === 'small' ? '48px' : '128px')};
-  height: 48px;
+  width: ${props => (props.size === 'small' ? '64px' : '128px')};
+  height: 64px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,9 +77,10 @@ export const Navigation = styled.nav`
 export const NavToggler = styled.button`
   width: 48px;
   height: 48px;
-  padding: 18px 0;
+  padding: 16px 0;
   position: absolute;
   left: 0;
+  bottom: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -90,6 +92,8 @@ export const NavToggler = styled.button`
 
   transition: transform 0.3s ease-in-out;
   transform: ${props => (props.menu ? 'rotate(-180deg)' : 'rotate(0deg)')};
+
+  background: ${props => (props.menu ? colors.primary : 'transparent')};
 
   @media ${device.tabletLs} {
     display: none;
@@ -108,7 +112,7 @@ export const NavToggler = styled.button`
     :first-child.open {
       background-color: ${colors.terceary};
       transform: rotate(45deg);
-      top: -3px;
+      top: -2px;
       left: 2px;
     }
 
@@ -120,7 +124,7 @@ export const NavToggler = styled.button`
     :last-child.open {
       background-color: ${colors.terceary};
       transform: rotate(-45deg);
-      top: 2px;
+      top: 1px;
       left: 2px;
     }
   }
@@ -179,7 +183,7 @@ export const Menu = styled.ul`
     & + li {
       margin-top: 32px;
 
-      @media ${device.tablet} {
+      @media ${device.tabletLs} {
         margin-top: unset;
         margin-left: 20px;
       }
@@ -192,7 +196,7 @@ export const Menu = styled.ul`
         color: ${colors.terceary};
       }
 
-      @media ${device.tablet} {
+      @media ${device.tabletLs} {
         color: ${colors.greyLighter};
       }
 
