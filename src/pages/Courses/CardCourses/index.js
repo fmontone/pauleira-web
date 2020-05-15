@@ -19,7 +19,7 @@ export default function CardCourses() {
       onMouseUp={e => cardSlider.mouseUp(e)}
       onMouseMove={e => cardSlider.mouseMove(e)}
       onTouchStart={e => cardSlider.mouseDown(e)}
-      onTouchMove={e => cardSlider.mosueMove(e)}
+      onTouchMove={e => cardSlider.mouseMove(e)}
       onTouchEnd={e => cardSlider.mouseUp(e)}
     >
       <div className="card-slider">
