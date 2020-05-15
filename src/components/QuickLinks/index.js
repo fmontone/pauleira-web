@@ -21,12 +21,12 @@ export default function QuickLinks({ width }) {
         </a>
       </li>
       <li>
-        <a href="http://www.youtube.com/pauleira">
+        <a href="https://www.instagram.com/pauleiraguitars/">
           <Icon name="social-instagram" color={colors.greyHeavy} />
         </a>
       </li>
       <li>
-        <a href="http://www.youtube.com/pauleira">
+        <a href="https://www.facebook.com/pauleira/">
           <Icon name="social-facebook" color={colors.greyHeavy} />
         </a>
       </li>
