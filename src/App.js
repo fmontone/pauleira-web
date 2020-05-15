@@ -35,7 +35,10 @@ function App() {
     <Router history={history}>
       <GlobalStyles />
       <ActivePageContext.Provider value={providerActivePage}>
-        <PageWrapper isMainPage={activePage === '/'}>
+        <PageWrapper
+          isMainPage={activePage === '/'}
+          style={{ overflowX: 'hidden' }}
+        >
           <NavBar isMainPage={activePage === '/'} />
           <Routes />
           {activePage !== 'home' && <Footer />}

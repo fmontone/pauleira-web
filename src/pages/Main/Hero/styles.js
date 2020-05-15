@@ -16,11 +16,8 @@ export const Container = styled(ContainerCustom)`
   align-items: center;
   padding: 32px 16px 64px 16px;
 
-  overflow: hidden;
-
   @media ${device.tabletLs} {
     padding: 0 16px;
-    position: unset;
     justify-content: center;
     align-items: flex-start;
   }
@@ -31,10 +28,12 @@ export const Container = styled(ContainerCustom)`
 `;
 
 export const Title = styled.h1`
+  margin-top: 64px;
   font-family: ${fonts.promo};
   color: ${colors.white};
   font-size: ${props => (props.windowShort ? '24px' : '32px')};
   text-align: center;
+  order: 1;
 
   @media ${device.tablet} {
     font-size: 52px;
@@ -60,7 +59,9 @@ export const Title = styled.h1`
 `;
 
 export const HeroImg = styled.img`
+  margin-bottom: 32px;
   width: 110%;
+  order: 3;
 
   @media ${device.tablet} {
     height: auto;
@@ -89,6 +90,8 @@ export const HeroImg = styled.img`
 `;
 
 export const CallToAction = styled(ButtonCallToAction)`
+  order: 2;
+  margin: 32px 0;
   @media ${device.tabletLs} {
     transform: translateY(-200px);
     z-index: 11;

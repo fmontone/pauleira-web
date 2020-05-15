@@ -45,7 +45,7 @@ export default function Hero() {
 
       <HeroImg
         src={HeroIllustration}
-        alt="Pauleira Guitars Ilustração Isométrica da Luthier Paula Bifulvo ensinando técnicas de luthieria para um aluno"
+        alt="Pauleira Guitars Ilustração Isométrica da Luthier Paula Bifulco ensinando técnicas de luthieria para um aluno"
       />
 
       <CallToAction
