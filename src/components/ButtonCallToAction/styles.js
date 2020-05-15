@@ -17,4 +17,14 @@ export const Button = styled.button`
   border-radius: 5px;
   background: linear-gradient(#df00ff 0%, #31a6ef 100%);
   box-shadow: 0px 6px 11px rgba(138, 0, 255, 0.39);
+
+  transition: box-shadow 0.1s ease-out;
+
+  :hover {
+    box-shadow: 0px 0px 32px rgba(138, 0, 255, 0.89);
+  }
+
+  :active {
+    transform: translate(1px, 1px);
+  }
 `;
