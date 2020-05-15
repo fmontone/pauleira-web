@@ -31,7 +31,7 @@ export const Title = styled.h1`
   margin-top: 64px;
   font-family: ${fonts.promo};
   color: ${colors.white};
-  font-size: ${props => (props.windowShort ? '24px' : '32px')};
+  font-size: ${props => (props.windowShort ? '24px' : '40px')};
   text-align: center;
   order: 1;
 
