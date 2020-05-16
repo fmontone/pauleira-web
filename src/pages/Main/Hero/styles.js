@@ -41,6 +41,7 @@ export const Title = styled.h1`
 
   @media ${device.tabletLs} {
     transform: translateY(-200px);
+    margin-top: 0;
     margin-bottom: 40px;
     text-align: left;
 
@@ -65,6 +66,7 @@ export const HeroImg = styled.img`
 
   @media ${device.tablet} {
     height: auto;
+    margin-bottom: 0;
   }
 
   @media ${device.tabletLs} {
