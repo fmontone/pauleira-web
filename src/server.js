@@ -5,7 +5,7 @@ const app = express();
 
 const config = {
   folder: 'build',
-  forceHttps: process.env.NODE_ENV !== 'development',
+  forceHttps: false,
   port: process.env.PORT || 3333,
 };
 
