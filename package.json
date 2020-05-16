@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "customize-cra": "^0.9.1",
+    "express": "^4.17.1",
     "history": "^4.10.1",
     "polished": "^3.5.1",
     "prop-types": "^15.7.2",
@@ -25,8 +26,10 @@
     "yup": "^0.28.1"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "dev": "react-app-rewired start",
+    "start": "node server",
     "build": "react-app-rewired build",
+    "postinstall": "yarn build",
     "test": "react-app-rewired test --roots __tests__",
     "eject": "react-scripts eject"
   },
