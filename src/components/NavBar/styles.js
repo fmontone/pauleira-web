@@ -11,7 +11,7 @@ export const Header = styled.header`
   height: 64px;
   position: fixed;
   bottom: 0;
-  background: ${props => (props.isMainPage ? '#0A0012' : colors.black)};
+  background: ${colors.blackDeep};
 
   display: flex;
   flex-direction: column;
@@ -144,7 +144,7 @@ export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: ${colors.black};
+  background-color: ${colors.blackDeep};
 
   transition: all 0.2s ease-in-out;
   z-index: 99;
