@@ -29,7 +29,7 @@
     "dev": "react-app-rewired start",
     "start": "node ./src/server.js",
     "build": "react-app-rewired build",
-    "postinstall": "yarn build",
+    "postinstall": "npm run build",
     "test": "react-app-rewired test --roots __tests__",
     "eject": "react-scripts eject"
   },
