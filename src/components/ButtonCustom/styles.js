@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import colors from '~/styles/colors';
 
@@ -75,13 +75,33 @@ export const Button = styled.button`
   }
 `;
 
+const animate = keyframes`
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+
+  to {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+  }
+`;
+
 export const FeedBack = styled.div`
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 0px;
+  height: 0px;
   top: 50%;
   left: 50%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 0;
+
+  &&.animate {
+    animation: ${animate} 100ms ease-out;
+  }
 `;

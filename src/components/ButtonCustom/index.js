@@ -1,8 +1,6 @@
-import React, { useContext, useRef } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-
-import useButtonFeedback from '~/hooks/useButtonFeedback';
 
 import { ActivePageContext } from '~/contexts';
 
@@ -29,13 +27,10 @@ export default function ButtonCustom({
 }) {
   const history = useHistory();
   const { _, setActivePage } = useContext(ActivePageContext); /* eslint-disable-line */
-
-  const circleSpan = useRef();
-  const animateFeedback = useButtonFeedback(circleSpan);
+  const [feedback, setFeedback] = useState(false);
 
   function handleClick() {
-    animateFeedback.play(10);
-
+    setFeedback(false);
     if (navTo) {
       history.push(navTo);
       setActivePage(navTo);
@@ -45,7 +40,7 @@ export default function ButtonCustom({
 
   return (
     <Button
-      onClick={() => handleClick()}
+      onClick={() => setFeedback(true)}
       type={type}
       model={model}
       size={size}
@@ -54,7 +49,10 @@ export default function ButtonCustom({
       {...props}
     >
       <span>{children}</span>
-      <FeedBack ref={circleSpan} />
+      <FeedBack
+        className={feedback && 'animate'}
+        onAnimationEnd={() => handleClick(false)}
+      />
     </Button>
   );
 }
