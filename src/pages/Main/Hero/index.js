@@ -6,7 +6,7 @@ import { useWindowSize } from '~/hooks/useWindowSize';
 import { windowSize } from '~/styles/queries';
 
 import HeroIllustration from '~/assets/PauleiraHeroIsometricIllustration@2x.png';
-import { Container, Title, HeroImg, CallToAction } from './styles';
+import { Container, TextAndCall, Title, CallToAction, HeroImg } from './styles';
 
 export default function Hero() {
   const courseList = [
@@ -28,7 +28,7 @@ export default function Hero() {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [courseIndex, courseList]);
+  }, [courseIndex, courseList.length]);
 
   function handleCallToActionClick() {
     setActivePage('cursos');
@@ -37,23 +37,24 @@ export default function Hero() {
 
   return (
     <Container>
-      <Title>
-        Aprenda
-        <span className="title__highlight">{courseList[courseIndex]}</span>
-        de guitarras e contrabaixos
-      </Title>
+      <TextAndCall>
+        <Title>
+          Aprenda
+          <span className="title__highlight">{courseList[courseIndex]}</span>
+          de guitarras e contrabaixos
+        </Title>
 
+        <CallToAction
+          onClick={handleCallToActionClick}
+          width={windowWidth < windowSize.laptop ? 'stretch' : 'auto'}
+        >
+          Conheça Nossos Cursos
+        </CallToAction>
+      </TextAndCall>
       <HeroImg
         src={HeroIllustration}
         alt="Pauleira Guitars Ilustração Isométrica da Luthier Paula Bifulco ensinando técnicas de luthieria para um aluno"
       />
-
-      <CallToAction
-        onClick={handleCallToActionClick}
-        width={windowWidth < windowSize.tablet ? 'stretch' : 'auto'}
-      >
-        Conheça Nossos Cursos
-      </CallToAction>
     </Container>
   );
 }

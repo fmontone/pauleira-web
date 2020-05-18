@@ -28,7 +28,7 @@ export function useWindowSize() {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); /* eslint-disable-line */
+  }); // Empty array ensures that effect is only run on mount and unmount
 
   return windowSize;
 }

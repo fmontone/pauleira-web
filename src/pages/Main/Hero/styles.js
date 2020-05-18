@@ -8,44 +8,42 @@ import fonts from '~/styles/fonts';
 import { device } from '~/styles/queries';
 
 export const Container = styled(ContainerCustom)`
-  height: 100vh;
   position: relative;
+  height: 100%;
+  padding: 32px 16px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px 16px 64px 16px;
 
-  @media ${device.tabletLs} {
-    padding: 0 16px;
-    justify-content: center;
-    align-items: flex-start;
+  @media ${device.laptop} {
+    align-items: flex-end;
   }
+`;
 
-  @media ${device.desktop} {
-    padding: unset;
+export const TextAndCall = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media ${device.laptop} {
+    width: 400px;
   }
 `;
 
 export const Title = styled.h1`
-  margin-top: 64px;
   font-family: ${fonts.promo};
   color: ${colors.white};
   font-size: ${props => (props.windowShort ? '24px' : '40px')};
   text-align: center;
-  order: 1;
 
   @media ${device.tablet} {
     font-size: 52px;
+    line-height: 60px;
   }
 
-  @media ${device.tabletLs} {
-    transform: translateY(-200px);
-    margin-top: 0;
-    margin-bottom: 40px;
+  @media ${device.laptop} {
     text-align: left;
-
-    z-index: 10;
   }
 
   .title__highlight {
@@ -54,48 +52,25 @@ export const Title = styled.h1`
     display: block;
 
     @media ${device.tablet} {
-      margin: 24px 0;
     }
   }
 `;
 
+export const CallToAction = styled(ButtonCallToAction)`
+  margin: 32px 0;
+`;
+
 export const HeroImg = styled.img`
-  margin-bottom: 32px;
   width: 110%;
-  order: 3;
-
-  @media ${device.tablet} {
-    height: auto;
-    margin-bottom: 0;
-  }
-
-  @media ${device.tabletLs} {
-    width: auto;
-    height: auto;
-
-    position: absolute;
-    right: -230px;
-    bottom: 0;
-  }
 
   @media ${device.laptop} {
-    right: -100px;
-  }
-
-  @media ${device.desktop} {
-    right: 150px;
+    position: absolute;
+    width: 700px;
+    height: auto;
+    margin: 32px 0;
+    left: -100px;
   }
 
   @media ${device.desktopL} {
-    right: 180px;
-  }
-`;
-
-export const CallToAction = styled(ButtonCallToAction)`
-  order: 2;
-  margin: 32px 0;
-  @media ${device.tabletLs} {
-    transform: translateY(-200px);
-    z-index: 11;
   }
 `;
