@@ -43,5 +43,5 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: ${colors.black};
+  background: ${colors.blackDeep};
 `;
