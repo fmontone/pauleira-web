@@ -18,7 +18,7 @@ export const Container = styled(ContainerCustom)`
   align-items: center;
 
   @media ${device.laptop} {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 `;
 
@@ -65,10 +65,11 @@ export const HeroImg = styled.img`
 
   @media ${device.laptop} {
     position: absolute;
-    width: 700px;
+    width: auto;
+    max-height: 90%;
     height: auto;
     margin: 32px 0;
-    left: -100px;
+    right: 0;
   }
 
   @media ${device.desktopL} {
