@@ -12,10 +12,8 @@ For now you can run this project as stand alone SPA, this way (note: I use Yarn 
 
 - Clone it from this repo
 - Run `yarn install`
-- Run `yarn dev` and it should run in dev mod in port 3000
-- Run `yarn build` and then `yarn start` to execute in production mode
-
-This is enough to run this project on your browser and navigate thru it`s front end basically on port 3000 as create-react-app defaults.
+- Run `yarn dev` and it should run in dev mod in port `3000`
+- Run `yarn build` and then `yarn start` to execute in production mode on port `3333`
 
 ## Contact Info
 
