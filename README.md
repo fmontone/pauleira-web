@@ -2,7 +2,7 @@
 
 # Pauleira Front Web
 
-This is a website buutstraped with [Create React App](https://github.com/facebook/create-react-app) and It's part of a initial project made for Pauleira Guitars, that I'm building together with a backend in NodeJs and a Front End Admin.
+This is a website bootstraped with [Create React App](https://github.com/facebook/create-react-app) and It's part of a initial project made for Pauleira Guitars, that I'm building together with a backend in NodeJs and a Front End Admin.
 
 The idea is to create a strong base for escalating and add features in the future.
 
