@@ -3,8 +3,7 @@ import React from 'react';
 import PageTitle from '~/components/PageTitle';
 import { Container, Article } from './styles';
 
-import dummyImageWoodShop from '~/assets/dummyImage-woodShop.jpg';
-import dummyImagePaula from '~/assets/dummyImage-paulaBifulco.png';
+import PaulaBifulco from '~/assets/pics/paula-bifulco-guitar-maker.jpeg';
 
 export default function About() {
   return (
@@ -13,182 +12,57 @@ export default function About() {
       <Container>
         <Article>
           <header>
-            <h2>Nós criamos, construimos, esinamos e inspiramos</h2>
+            <h2>Eu amo inspirar pessoas a fazerem coisas diferentes!</h2>
           </header>
           <section>
             <p>
-              Sed ut <strong>perspiciatis unde omnis</strong> iste natus error
-              sit voluptatem accusantium doloremque laudantium, totam rem
-              aperiam,{' '}
-              <mark>
-                eaque ipsa quae ab illo inventore veritatis et quasi architecto
-              </mark>{' '}
-              beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem{' '}
-              <em>quia voluptas sit aspernatur</em> aut odit aut fugit, sed quia
-              consequuntur magni dolores eos qui ratione voluptatem sequi
-              nesciunt.{' '}
-              <strong>
-                <em>Neque porro</em>
-              </strong>{' '}
-              quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur.
+              Olá! Meu nome é Paula Bifulco, sou guitar Maker há mais de 10 anos
+              e faço questão de compartilhar com você as experiências mais
+              Pauleira que existem no mundo das guitarras.
             </p>
-
             <figure>
-              <img src={dummyImageWoodShop} alt="Oficina de Marcenaria" />
+              <img src={PaulaBifulco} alt="Paula Bifulco Luthier Pauleira" />
 
               <figcaption>
-                Uma linda oficina de marcenaria tirada de um banco de imagens
-                <br />
-                Image by&nbsp;
-                <a
-                  href="https://pixabay.com/users/ThMilherou-5808126/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4863393"
-                  title="Thierry Milherou on Pixabay"
-                >
-                  Thierry Milherou
-                </a>{' '}
-                from{' '}
-                <a
-                  href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4863393"
-                  title="Pixabay"
-                >
-                  Pixabay
-                </a>
+                Paula Bifulco é a Luthier que comanda a marca Pauleira
               </figcaption>
             </figure>
-
-            <figure className="figure__align-left">
-              <img src={dummyImagePaula} alt="Paula Bifulco" />
-
-              <figcaption>Paula Bifulco</figcaption>
-            </figure>
-
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur.
-            </p>
-
-            <blockquote>
-              &ldquo;Build a future where people live in harmony with
-              nature&rdquo;.
-              <cite>Fabio Montone</cite>
-            </blockquote>
-
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur.
-            </p>
-
-            <figure className="figure__align-right">
-              <img src={dummyImagePaula} alt="Paula Bifulco" />
-
-              <figcaption>Paula Bifulco</figcaption>
-            </figure>
-
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur.
-            </p>
-
-            <h3>Heading 3 test</h3>
-
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur.
+              Seja através de cursos ou serviços, minha expectativa desde o
+              início, quando ingressei totalmente em 2008 na luthieria, sempre
+              foi de inspirar pessoas como você a fazerem coisas diferentes
+              sempre buscando compartilhar a simplicidade, praticidade e
+              objetividade de todas as atividades relacionadas a manutenção,
+              construção, customização.
             </p>
 
             <p>
-              I had not been aware, but according to <cite>Richard Kerr</cite>,
-              <q cite="//www.sciencemag.org/content/340/6136/1031">
-                Most robotic missions to Mars have failed
-              </q>
-              .
+              Em 2017 comecei a criar cursos individuais 100% práticos dentro da
+              minha própria oficina, afim de entender individualmente as
+              necessidades de apoio ou suporte técnico que cada aluno possuía.
             </p>
-
-            <h4>Heading 4 test</h4>
 
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur.
+              Atualmente, ainda mantendo o modo individual de cursos, você
+              encontra diversas possibilidades de cursos customizados, os quais
+              são possíveis de configurar de acordo com seus objetivos.
             </p>
-
-            <hr />
 
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur.
+              Além dos cursos presenciais, também existe um curso online. Sim! É
+              possível ter experiencias fora de série até mesmo à distância! É
+              curso muito especial, feito em parceria com a equipe Oficina de
+              Casa, que foi planejado para atender desde que não entende nada de
+              luthieria ou marcenaria até luthiers que já possuem certa
+              experiência e gostariam de aprimorar ou aprender novas técnicas.
+              Você faz a sua guitarra (ou baixo - e até uma Guitarra de Caixa)
+              na sua casa, no seu tempo. E ainda tem todo nosso suporte técnico!
             </p>
 
-            <ul>
-              <li>Coffee</li>
-              <li>Tea</li>
-              <li>Milk</li>
-            </ul>
-
-            <ol>
-              <li>Coffee</li>
-              <li>Tea</li>
-              <li>Milk</li>
-            </ol>
-
-            <ul>
-              <li>
-                Coffee
-                <ul>
-                  <li>Spresso</li>
-                  <li>
-                    Americano
-                    <ul>
-                      <li>Strong</li>
-                      <li>Regular</li>
-                      <li>Soft</li>
-                    </ul>
-                  </li>
-                  <li>Machiato</li>
-                  <li>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et
-                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
-                    enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                    aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet, consectetur.
-                  </li>
-                </ul>
-              </li>
-              <li>Tea</li>
-              <li>Milk</li>
-            </ul>
+            <p>
+              Curtiu? Então deixo aqui o meu convite para você acompanhar as
+              atividades que estão rolando por aqui pelas redes sociais.
+            </p>
           </section>
         </Article>
       </Container>
