@@ -3,7 +3,7 @@ import React from 'react';
 import PageTitle from '~/components/PageTitle';
 import { Container, Article } from './styles';
 
-import PaulaBifulco from '~/assets/pics/paula-bifulco-guitar-maker.jpeg';
+import PaulaBifulco from '~/assets/pics/paula-bifulco-luthier-guitar-maker-pauleira-001.jpg';
 
 export default function About() {
   return (

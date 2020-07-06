@@ -81,7 +81,7 @@ export default function NavBar({ isMainPage }) {
                 Cursos
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 to="/galerias"
                 onClick={() => setActivePage('/galerias')}
@@ -89,7 +89,7 @@ export default function NavBar({ isMainPage }) {
               >
                 Galeria
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/contato"
