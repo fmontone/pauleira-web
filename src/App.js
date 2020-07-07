@@ -10,6 +10,7 @@ import GlobalStyles from '~/styles/global';
 import NavBar from '~/components/NavBar';
 import PageWrapper from '~/components/PageWrapper';
 import Footer from '~/components/Footer';
+import Disclaimer from '~/components/Disclaimer';
 
 function App() {
   const [activePage, setActivePage] = useState(null);
@@ -39,6 +40,12 @@ function App() {
           isMainPage={activePage === '/'}
           style={{ overflowX: 'hidden' }}
         >
+          <Disclaimer status="danger">
+            <span>
+              Devido aos problemas causados pela COVID-19 não estamos oferecendo
+              cursos presenciais.
+            </span>
+          </Disclaimer>
           <NavBar isMainPage={activePage === '/'} />
           <Routes />
           {activePage !== 'home' && <Footer />}
