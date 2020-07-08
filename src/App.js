@@ -40,7 +40,7 @@ function App() {
           isMainPage={activePage === '/'}
           style={{ overflowX: 'hidden' }}
         >
-          <Disclaimer status="danger">
+          <Disclaimer status="danger" name="covid-19">
             <span>
               Devido aos problemas causados pela COVID-19 não estamos oferecendo
               cursos presenciais.

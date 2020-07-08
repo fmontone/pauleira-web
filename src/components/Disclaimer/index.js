@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -8,6 +8,7 @@ import {
   MdCheckCircle,
   MdClose,
 } from 'react-icons/md';
+import useClearLocalDisclaimer from '~/hooks/useClearLocalDisclaimers';
 
 import {
   Wrapper,
@@ -17,9 +18,27 @@ import {
   CloseButton,
 } from './styles';
 
-function Disclaimer({ status, children }) {
+function Disclaimer({ status, name, children }) {
+  const [isRead, setIsRead] = useState(true);
+  const nameDisclaimer = `pauleira-disclaimer-${name}`;
+  const storageDisclaimer = JSON.parse(localStorage.getItem(nameDisclaimer));
+
+  useClearLocalDisclaimer(nameDisclaimer);
+
+  useEffect(() => {
+    // Set if Don't Exists
+    if (!storageDisclaimer) {
+      localStorage.setItem(nameDisclaimer, JSON.stringify({ isRead: false }));
+      setIsRead(false);
+    }
+
+    // Check Value and apply on isRead
+    if (storageDisclaimer && storageDisclaimer.isRead !== isRead)
+      localStorage.setItem(nameDisclaimer, JSON.stringify({ isRead }));
+  }, [isRead, nameDisclaimer, storageDisclaimer]);
+
   return (
-    <Wrapper status={status}>
+    <Wrapper status={status} isRead={isRead}>
       <Container>
         <LogoContainer>
           {status === 'info' && <MdInfo color="#fff" size="24" />}
@@ -28,7 +47,7 @@ function Disclaimer({ status, children }) {
           {status === 'success' && <MdCheckCircle color="#fff" size="24" />}
         </LogoContainer>
         <Message status={status}>{children}</Message>
-        <CloseButton>
+        <CloseButton onClick={() => setIsRead(true)}>
           <MdClose color="#fff" size="24" />
         </CloseButton>
       </Container>
@@ -37,13 +56,14 @@ function Disclaimer({ status, children }) {
 }
 
 Disclaimer.propTypes = {
+  status: PropTypes.string,
+  name: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.func,
     PropTypes.node,
     PropTypes.string,
   ]).isRequired,
-  status: PropTypes.string,
 };
 Disclaimer.defaultProps = {
   status: 'info',

@@ -7,7 +7,7 @@ import ContainerCustom from '~/components/ContainerCustom';
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 32px;
-  display: flex;
+  display: ${props => (props.isRead ? 'none' : 'flex')};
   justify-content: center;
   align-items: center;
   background-color: ${props => {
