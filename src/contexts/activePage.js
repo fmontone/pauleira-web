@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export const ActivePageContext = createContext(null);
