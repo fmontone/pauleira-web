@@ -11,7 +11,6 @@ export const Container = styled(ContainerCustom)`
   position: relative;
   height: 100%;
   padding: 32px 16px;
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +60,7 @@ export const CallToAction = styled(ButtonCallToAction)`
 `;
 
 export const HeroImg = styled.img`
-  width: 110%;
+  width: 100%;
 
   @media ${device.laptop} {
     position: absolute;
