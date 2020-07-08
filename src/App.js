@@ -48,7 +48,7 @@ function App() {
           </Disclaimer>
           <NavBar isMainPage={activePage === '/'} />
           <Routes />
-          {activePage !== 'home' && <Footer />}
+          {activePage !== '/' && <Footer />}
         </PageWrapper>
       </ActivePageContext.Provider>
     </Router>
