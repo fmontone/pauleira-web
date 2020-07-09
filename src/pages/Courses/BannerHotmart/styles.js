@@ -26,10 +26,10 @@ export const Container = styled(Card)`
 
   ${linearGradient({
     colorStops: [
-      `${darken(0.5, colors.primary)} 40%`,
-      `${darken(0.3, colors.primary)} 100%`,
+      `${darken(0.4, colors.primary)} 40%`,
+      `${darken(0.2, colors.primary)} 100%`,
     ],
-    toDirection: 'to bottom',
+    toDirection: 'to top right',
     fallback: '#FFF',
   })}
 

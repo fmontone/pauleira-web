@@ -14,11 +14,11 @@ function BannerHotMart() {
           recursos, em uma bela parceria da Pauleira com a Oficina de Casa!
           <span>
             <span>
-              <GoFlame />
+              <GoFlame color="yellowgreen" />
               BÔNUS
-              <GoFlame />
+              <GoFlame color="yellowgreen" />
             </span>
-            aprenda a cosntruir também uma Cigar Box Guitar!
+            Aprenda a cosntruir também uma Cigar Box Guitar!
           </span>
         </Description>
         <CallToAction
