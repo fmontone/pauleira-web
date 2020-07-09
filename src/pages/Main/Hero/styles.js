@@ -11,6 +11,7 @@ export const Container = styled(ContainerCustom)`
   position: relative;
   height: 100%;
   padding: 32px 16px;
+  flex: 1%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +69,7 @@ export const HeroImg = styled.img`
     max-height: 90%;
     height: auto;
     margin: 32px 0;
-    right: 0;
+    right: -120px;
   }
 
   @media ${device.desktopL} {
