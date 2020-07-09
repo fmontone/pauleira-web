@@ -19,7 +19,7 @@ import {
 } from './styles';
 
 function Disclaimer({ status, name, children }) {
-  const [isRead, setIsRead] = useState(true);
+  const [isRead, setIsRead] = useState(false);
   const nameDisclaimer = `pauleira-disclaimer-${name}`;
   const storageDisclaimer = JSON.parse(localStorage.getItem(nameDisclaimer));
 
