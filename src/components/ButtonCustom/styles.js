@@ -11,6 +11,10 @@ export const Button = styled.button`
   padding: 0 32px;
   overflow: hidden;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-transform: ${props =>
     props.model === 'callToAction' ? 'uppercase' : 'unset'};
   font-size: ${props => (props.size === 'small' ? '12px' : '16px')};
@@ -73,6 +77,16 @@ export const Button = styled.button`
   &:active {
     transform: translate(0.5px, 0.5px);
   }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    margin-left: 4px;
+  }
 `;
 
 const animate = keyframes`
@@ -88,6 +102,7 @@ const animate = keyframes`
     height: 200px;
     opacity: 1;
   }
+
 `;
 
 export const FeedBack = styled.div`

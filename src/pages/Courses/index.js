@@ -2,6 +2,7 @@ import React from 'react';
 
 import PageTitle from '~/components/PageTitle';
 import ArticleCustom from '~/components/ArticleCustom';
+import BannerHotmart from '~/pages/Courses/BannerHotmart';
 import PaulaBifulco from '~/assets/pics/paula-bifulco-luthier-guitar-maker-pauleira-002.jpg';
 
 import { Container } from './styles';
@@ -43,6 +44,13 @@ export default function Courses() {
             </p>
 
             <p>Vem com a gente! Let&apos;s rock!</p>
+
+            <BannerHotmart />
+
+            <p>
+              Se tiver qualquer dúvida quando ao curso, fique à vontade para
+              mandar uma mensagem em nosso whatsapp clicando no botão abaixo:
+            </p>
           </section>
         </ArticleCustom>
       </Container>

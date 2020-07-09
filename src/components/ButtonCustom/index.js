@@ -48,7 +48,7 @@ export default function ButtonCustom({
       width={width}
       {...props}
     >
-      <span>{children}</span>
+      <div>{children}</div>
       <FeedBack
         className={feedback && 'animate'}
         onAnimationEnd={() => handleClick(false)}
