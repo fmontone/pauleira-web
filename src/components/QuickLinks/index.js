@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+import { ActivePageContext } from '~/contexts';
 
 import { IconList } from './styles';
 import colors from '~/styles/colors';
@@ -8,10 +10,12 @@ import colors from '~/styles/colors';
 import Icon from '~/components/Icon';
 
 export default function QuickLinks({ width }) {
+  const { setActivePage } = useContext(ActivePageContext);
+
   return (
     <IconList width={width}>
       <li>
-        <Link to="/contato">
+        <Link to="/contato" onClick={() => setActivePage('/contato')}>
           <Icon name="social-contact" color={colors.greyHeavy} />
         </Link>
       </li>

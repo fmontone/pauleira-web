@@ -142,8 +142,8 @@ export const Menu = styled.ul`
   left: 0;
   padding-bottom: ${isAndroid ? '94px' : '64px'};
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
   background-color: ${colors.blackDeep};
 
   transition: all 0.2s ease-in-out;
@@ -181,8 +181,6 @@ export const Menu = styled.ul`
     }
 
     & + li {
-      margin-top: 32px;
-
       @media ${device.tabletLs} {
         margin-top: unset;
         margin-left: 20px;
