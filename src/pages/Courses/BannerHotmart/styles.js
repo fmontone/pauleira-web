@@ -95,7 +95,7 @@ export const CallToAction = styled(ButtonCustom).attrs({
   height: 48px;
 
   @media ${device.tablet} {
-    width: 30% !important;
+    width: auto !important;
     padding: 0 16px;
   }
 

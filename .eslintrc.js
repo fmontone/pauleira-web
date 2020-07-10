@@ -2,7 +2,7 @@ module.exports = {
   env: {
     es6: true,
     jest: true,
-    browser: true
+    browser: true,
   },
   extends: ["airbnb", "prettier", "prettier/react"],
   globals: {
@@ -26,13 +26,12 @@ module.exports = {
     "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "react/jsx-one-expression-per-line": "off",
     "global-require": "off",
-    "react-native/no-raw-text": "off",
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
     camelcase: "off",
     "no-console": ["error", { allow: ["tron", "log"] }],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
   },
   settings: {
     "import/resolver": {
