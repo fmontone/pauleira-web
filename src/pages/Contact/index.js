@@ -6,9 +6,14 @@ import PageTitle from '~/components/PageTitle';
 import { Container, GpsCard, GpsButton } from './styles';
 import colors from '~/styles/colors';
 
+import Meta from '~/pages/Meta';
+import metadata from './data/metadata.json';
+import metaImage from '~/assets/openGraph/mediaContato.png';
+
 export default function Contact() {
   return (
     <>
+      <Meta data={metadata} image={metaImage} />
       <PageTitle>Contato</PageTitle>
       <Container>
         <h2>Atendemos somente com hora marcada</h2>

@@ -5,11 +5,16 @@ import ArticleCustom from '~/components/ArticleCustom';
 import BannerHotmart from '~/pages/Courses/BannerHotmart';
 import PaulaBifulco from '~/assets/pics/paula-bifulco-luthier-guitar-maker-pauleira-002.jpg';
 
+import Meta from '~/pages/Meta';
+import metadata from './data/metadata.json';
+import metaImage from '~/assets/openGraph/mediaCursos.png';
+
 import { Container } from './styles';
 
 export default function Courses() {
   return (
     <>
+      <Meta data={metadata} image={metaImage} />
       <PageTitle>Cursos</PageTitle>
       <Container>
         <ArticleCustom>

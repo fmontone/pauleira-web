@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Router } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import Routes from './routes';
 import history from '~/services/history';
@@ -40,6 +41,11 @@ function App() {
           isMainPage={activePage === '/'}
           style={{ overflowX: 'hidden' }}
         >
+          <Helmet>
+            <title>Pauleira Guitars - Cursos de Luthieria</title>
+            <link rel="canonical" href="https://www.pauleira.com.br" />
+          </Helmet>
+
           <Disclaimer status="danger" name="covid-19">
             <span>
               Devido aos problemas causados pela COVID-19 não estamos oferecendo

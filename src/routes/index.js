@@ -6,6 +6,7 @@ import About from '~/pages/About';
 import Courses from '~/pages/Courses';
 import Galleries from '~/pages/Galleries';
 import Contact from '~/pages/Contact';
+import NotFound404 from '~/pages/NotFound404';
 
 export default function Routes() {
   return (
@@ -26,6 +27,8 @@ export default function Routes() {
       />
 
       <Route path="/contato" component={Contact} />
+
+      <Route component={NotFound404} />
     </Switch>
   );
 }
