@@ -11,7 +11,6 @@ import GlobalStyles from '~/styles/global';
 import NavBar from '~/components/NavBar';
 import PageWrapper from '~/components/PageWrapper';
 import Footer from '~/components/Footer';
-import Disclaimer from '~/components/Disclaimer';
 
 function App() {
   const [activePage, setActivePage] = useState(null);
@@ -46,12 +45,6 @@ function App() {
             <link rel="canonical" href="https://www.pauleira.com.br" />
           </Helmet>
 
-          <Disclaimer status="danger" name="covid-19">
-            <span>
-              Devido aos problemas causados pela COVID-19 não estamos oferecendo
-              cursos presenciais.
-            </span>
-          </Disclaimer>
           <NavBar isMainPage={activePage === '/'} />
           <Routes />
           {activePage !== '/' && <Footer />}
