@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 import { transparentize } from 'polished';
 
 import ContainerCustom from '~/components/ContainerCustom';
@@ -16,7 +15,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${transparentize(0.1, colors.greyLighter)};
+  background-color: ${transparentize(0.3, colors.blackDeep)};
   overflow-y: scroll;
 
   z-index: 500;
@@ -189,43 +188,3 @@ export const ExpandPicture = styled.div`
 `;
 
 export const Article = styled(ArticleCustom)``;
-
-export const PostNav = styled(Link)`
-  flex: 1;
-  padding: 0px;
-  font-size: 12px;
-  font-weight: 500;
-  color: ${colors.greyHeavy};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  :nth-child(1) {
-    span {
-      margin-right: 4px;
-    }
-  }
-
-  :nth-child(2) {
-    text-align: right;
-    border-left: 1px solid ${colors.greyLight};
-    justify-content: flex-end;
-
-    span {
-      margin-left: 4px;
-    }
-  }
-
-  span {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &:hover {
-    color: ${colors.statusInfo};
-  }
-`;

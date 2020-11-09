@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import {
-  MdFullscreen,
-  MdFullscreenExit,
-  MdChevronLeft,
-  MdChevronRight,
-  MdClose,
-} from 'react-icons/md';
+import { MdFullscreen, MdFullscreenExit, MdClose } from 'react-icons/md';
 
+import { useParams } from 'react-router-dom';
+import api from '~/services/api';
 import history from '~/services/history';
 
 import ThumbSlider from './ThumbSlider';
@@ -24,165 +20,124 @@ import {
   BigPicture,
   ExpandPicture,
   Article,
-  PostNav,
 } from './styles';
 
 export default function Gallery() {
   const [zoom, setZoom] = useState(false);
+  const [gallery, setGallery] = useState({});
+  const [fetched, setFetched] = useState(false);
+  const [sortedImages, setSortedImages] = useState(false);
+  const [selectedImage, setSelectedImage] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function fetchGallery() {
+      const { data } = await api.get(`/galleries/${id}`);
+
+      if (!data)
+        alert('A galeria procurada não existe ou não está mais disponível');
+
+      setGallery(data);
+      setFetched(true);
+    }
+
+    if (!fetched) fetchGallery();
+  }, [fetched, gallery, id]);
+
+  useEffect(() => {
+    if (fetched && gallery) {
+      setSortedImages(gallery.images.sort((a, b) => a.position - b.position));
+      setSelectedImage(gallery.images.find(image => image.position === '1'));
+      setLoading(false);
+    }
+  }, [fetched, gallery, sortedImages]);
+
+  function handleSelectImage(position) {
+    setSelectedImage(sortedImages.find(img => img.position === position));
+  }
 
   return (
     <Wrapper>
-      <CloseGallery
-        onClick={() => {
-          history.push('/galerias');
-        }}
-        zoom={zoom}
-      >
-        <MdClose size="32px" color={colors.greyHeavy} />
-      </CloseGallery>
-      <ClickWrapper
-        onClick={e => {
-          e.stopPropagation();
-          history.push('/galerias');
-        }}
-      />
+      {loading ? (
+        <h3>LOADING</h3>
+      ) : (
+        <>
+          <CloseGallery
+            onClick={() => {
+              history.push('/galerias');
+            }}
+            zoom={zoom}
+          >
+            <MdClose size="32px" color={colors.greyHeavy} />
+          </CloseGallery>
+          <ClickWrapper
+            onClick={e => {
+              e.stopPropagation();
+              history.push('/galerias');
+            }}
+          />
 
-      <Container>
-        <header>
-          <h1>Johnny Ramone Tribute Amazing</h1>
-          <h4>
-            By <span>Pauleira Guitars</span>
-          </h4>
-        </header>
-        <section className="gallery__images">
-          <BigPicture zoom={zoom}>
-            <div className="big-picture__wrapper">
-              <img
-                src="https://cdn.pixabay.com/photo/2017/10/30/16/38/music-2902891_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-              <ExpandPicture role="button" zoom={zoom}>
-                {!zoom ? (
-                  <MdFullscreen
-                    size="24px"
-                    color="#fff"
-                    onClick={() => setZoom(!zoom)}
+          <Container>
+            <header>
+              <h1>{gallery.title}</h1>
+              <h4>
+                By <span>{gallery.user.name}</span>
+              </h4>
+            </header>
+            <section className="gallery__images">
+              <BigPicture zoom={zoom}>
+                <div className="big-picture__wrapper">
+                  <img
+                    src={selectedImage.url}
+                    alt={selectedImage.description || gallery.description}
                   />
-                ) : (
-                  <MdFullscreenExit
-                    size="24px"
-                    color="#fff"
-                    onClick={() => setZoom(!zoom)}
-                  />
-                )}
-              </ExpandPicture>
-            </div>
-          </BigPicture>
-          <ThumbSlider zoom={zoom}>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2017/10/30/16/38/music-2902891_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2017/11/17/11/39/guitar-2957224_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2015/08/29/14/18/bass-913092_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2017/08/06/07/28/instrument-2589863_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2016/03/26/22/36/music-1281642_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2017/11/07/00/18/guitar-2925274_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2017/05/01/18/18/guitar-2276181_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-            <li>
-              <img
-                src="https://cdn.pixabay.com/photo/2017/03/28/23/13/guitar-2183684_960_720.jpg"
-                alt="Guitarra Maluca"
-              />
-            </li>
-          </ThumbSlider>
-        </section>
-        <section className="gallery__social">
-          <ButtonLike />
+                  <ExpandPicture role="button" zoom={zoom}>
+                    {!zoom ? (
+                      <MdFullscreen
+                        size="24px"
+                        color="#fff"
+                        onClick={() => setZoom(!zoom)}
+                      />
+                    ) : (
+                      <MdFullscreenExit
+                        size="24px"
+                        color="#fff"
+                        onClick={() => setZoom(!zoom)}
+                      />
+                    )}
+                  </ExpandPicture>
+                </div>
+              </BigPicture>
 
-          <ShareBlock />
-        </section>
-        <section className="gallery__text">
-          <Article padding="0">
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut.
-            </p>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut.
-            </p>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-              velit, sed quia non numquam eius modi tempora incidunt ut.
-            </p>
-          </Article>
-        </section>
-        <section className="gallery__nav">
-          <PostNav onClick={() => history.push('/galerias/2/galeria-teste')}>
-            <span>
-              <MdChevronLeft color={colors.terceary} />
-            </span>
-            Guitarra Les Paul V8 Little Darling Amazing
-          </PostNav>
-          <PostNav onClick={() => history.push('/galerias/3/galeria-teste')}>
-            Johnny Ramone Tribute e se o texto for de duas linhas{' '}
-            <span>
-              <MdChevronRight color={colors.terceary} />
-            </span>
-          </PostNav>
-        </section>
-      </Container>
+              {sortedImages.length > 1 && (
+                <ThumbSlider zoom={zoom}>
+                  {sortedImages &&
+                    sortedImages.map(image => (
+                      <li key={String(image.id)}>
+                        <button
+                          type="button"
+                          onClick={() => handleSelectImage(image.position)}
+                        >
+                          <img src={image.url} alt={image.description} />
+                        </button>
+                      </li>
+                    ))}
+                </ThumbSlider>
+              )}
+            </section>
+            <section className="gallery__social">
+              <ButtonLike />
+
+              <ShareBlock />
+            </section>
+            <section className="gallery__text">
+              <Article padding="0">{gallery.description}</Article>
+            </section>
+          </Container>
+        </>
+      )}
     </Wrapper>
   );
 }
