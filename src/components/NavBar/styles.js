@@ -9,13 +9,14 @@ const isAndroid = new RegExp('Android').test(navigator.userAgent);
 export const Header = styled.header`
   width: 100%;
   height: 64px;
-  position: fixed;
   bottom: 0;
-  background: ${colors.blackDeep};
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  border-bottom: 1px solid ${colors.greyLight};
+  background-color: #fff;
 
   @media ${device.tabletLs} {
     position: relative;
@@ -170,7 +171,6 @@ export const Menu = styled.ul`
     text-transform: uppercase;
     display: block;
 
-    transition: all 0.9s linear;
     opacity: ${props => (props.menu ? '1' : '0')};
 
     @media ${device.tabletLs} {
@@ -191,11 +191,11 @@ export const Menu = styled.ul`
       color: ${colors.greyHeavy};
 
       &.isActive {
-        color: ${colors.terceary};
+        color: ${colors.primary};
       }
 
       @media ${device.tabletLs} {
-        color: ${colors.greyLighter};
+        color: ${colors.blackDeep};
       }
 
       :hover {

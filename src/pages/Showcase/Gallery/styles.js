@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${transparentize(0.3, colors.blackDeep)};
+  background-color: ${transparentize(0.1, colors.blackDeep)};
   overflow-y: scroll;
 
   z-index: 500;
@@ -51,9 +51,8 @@ export const Container = styled(ContainerCustom)`
     line-height: 36px;
   }
 
-  h4 > span {
-    color: ${colors.statusInfo};
-    font-size: 16px;
+  h4 {
+    font-size: 12px;
   }
 
   /* Section */

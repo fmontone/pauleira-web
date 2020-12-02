@@ -6,7 +6,6 @@ import { ActivePageContext } from '~/contexts';
 import { useWindowSize } from '~/hooks/useWindowSize';
 
 import Icon from '~/components/Icon';
-import QuickLinks from '~/components/QuickLinks';
 
 import colors from '~/styles/colors';
 import PauleiraLogo from '~/assets/svg/pauleira-logo.svg';
@@ -37,14 +36,12 @@ export default function NavBar({ isMainPage }) {
         <Logo size={windowWidth < breakePoint.tabletLs ? 'small' : 'large'}>
           <Link to="/" onClick={() => setActivePage('/')}>
             {windowWidth < breakePoint.tabletLs ? (
-              <Icon name="logo-flying-p" color={colors.greyLighter} />
+              <Icon name="logo-flying-p" color={colors.blackDeep} />
             ) : (
               <img src={PauleiraLogo} alt="Pauleira Guitars" />
             )}
           </Link>
         </Logo>
-
-        {windowWidth < breakePoint.tabletLs && <QuickLinks />}
 
         <Navigation>
           <NavToggler menu={menu} onClick={handleMenuToggle}>
@@ -81,15 +78,15 @@ export default function NavBar({ isMainPage }) {
                 Cursos
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
-                to="/galerias"
-                onClick={() => setActivePage('/galerias')}
-                className={activePage === '/galerias' ? 'isActive' : ''}
+                to="/showcase"
+                onClick={() => setActivePage('/showcase')}
+                className={activePage === '/showcase' ? 'isActive' : ''}
               >
-                Galeria
+                Showcase
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 to="/contato"

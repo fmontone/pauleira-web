@@ -5,7 +5,6 @@ import { device } from '~/styles/queries';
 
 export const Foot = styled.footer`
   width: 100%;
-  padding-bottom: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet';
 import Routes from './routes';
 import history from '~/services/history';
 
+import AppStore from '~/store/AppStore';
+
 import { ActivePageContext } from '~/contexts';
 import GlobalStyles from '~/styles/global';
 
@@ -35,21 +37,23 @@ function App() {
   return (
     <Router history={history}>
       <GlobalStyles />
-      <ActivePageContext.Provider value={providerActivePage}>
-        <PageWrapper
-          isMainPage={activePage === '/'}
-          style={{ overflowX: 'hidden' }}
-        >
-          <Helmet>
-            <title>Pauleira Guitars - Cursos de Luthieria</title>
-            <link rel="canonical" href="https://www.pauleira.com.br" />
-          </Helmet>
+      <AppStore>
+        <ActivePageContext.Provider value={providerActivePage}>
+          <PageWrapper
+            isMainPage={activePage === '/'}
+            style={{ overflowX: 'hidden' }}
+          >
+            <Helmet>
+              <title>Pauleira Guitars - Cursos de Luthieria</title>
+              <link rel="canonical" href="https://www.pauleira.com.br" />
+            </Helmet>
 
-          <NavBar isMainPage={activePage === '/'} />
-          <Routes />
-          {activePage !== '/' && <Footer />}
-        </PageWrapper>
-      </ActivePageContext.Provider>
+            <NavBar isMainPage={activePage === '/'} />
+            <Routes />
+            {activePage !== '/' && <Footer />}
+          </PageWrapper>
+        </ActivePageContext.Provider>
+      </AppStore>
     </Router>
   );
 }

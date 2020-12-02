@@ -15,7 +15,11 @@ export default function Courses() {
   return (
     <>
       <Meta data={metadata} image={metaImage} />
-      <PageTitle>Cursos</PageTitle>
+      <PageTitle
+        title="Cursos"
+        theTitle="Cursos de Luthieria para todos os níveis"
+        subTitle="Aprenda construção e manutenção de guitarras e contrabaixos"
+      />
       <Container>
         <ArticleCustom>
           <header>

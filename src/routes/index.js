@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Main from '~/pages/Main';
 import About from '~/pages/About';
 import Courses from '~/pages/Courses';
-import Galleries from '~/pages/Galleries';
+import Showcase from '~/pages/Showcase';
 import Contact from '~/pages/Contact';
 import NotFound404 from '~/pages/NotFound404';
 
@@ -16,14 +16,10 @@ export default function Routes() {
 
       <Route path="/cursos" exact component={Courses} />
 
+      <Route path="/showcase" exact render={props => <Showcase {...props} />} />
       <Route
-        path="/galerias"
-        exact
-        render={props => <Galleries {...props} />}
-      />
-      <Route
-        path="/galerias/:id/:title"
-        render={props => <Galleries {...props} modalGallery />}
+        path="/showcase/:id/:title"
+        render={props => <Showcase {...props} modalGallery />}
       />
 
       <Route path="/contato" component={Contact} />

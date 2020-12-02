@@ -1,32 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PageTitleImage from '~/assets/pauleira-guitars-page-title-image.jpg';
-import { ContainerWrapper, Container, Title, Overlay, BgImage } from './styles';
+import { Container } from './styles';
 
-export default function PageTitle({ children, image }) {
+export default function PageTitle({ title, theTitle, subTitle }) {
   return (
-    <>
-      <ContainerWrapper>
-        <Container>
-          <Title>{children}</Title>
-        </Container>
-        <Overlay />
-        <BgImage src={image} alt="Pauleira Guitars Top header background" />
-      </ContainerWrapper>
-    </>
+    <Container>
+      <h1>{title}</h1>
+      <h2>{theTitle}</h2>
+      {subTitle && <h3>{subTitle}</h3>}
+    </Container>
   );
 }
 
 PageTitle.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-    PropTypes.element,
-  ]).isRequired,
-  image: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  theTitle: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
 };
 
 PageTitle.defaultProps = {
-  image: PageTitleImage,
+  subTitle: null,
 };

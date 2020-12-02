@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-
+import { useParams } from 'react-router-dom';
 import { MdFullscreen, MdFullscreenExit, MdClose } from 'react-icons/md';
 
-import { useParams } from 'react-router-dom';
 import api from '~/services/api';
 import history from '~/services/history';
+import { LikesProvider } from '~/hooks/likesContext';
 
 import ThumbSlider from './ThumbSlider';
 import ButtonLike from '~/components/ButtonLike';
@@ -22,7 +22,7 @@ import {
   Article,
 } from './styles';
 
-export default function Gallery() {
+function Gallery() {
   const [zoom, setZoom] = useState(false);
   const [gallery, setGallery] = useState({});
   const [fetched, setFetched] = useState(false);
@@ -33,11 +33,12 @@ export default function Gallery() {
   const { id } = useParams();
 
   useEffect(() => {
+    // Fetch Data
     async function fetchGallery() {
       const { data } = await api.get(`/galleries/${id}`);
 
       if (!data)
-        alert('A galeria procurada não existe ou não está mais disponível');
+        alert('A galeria procurada não existe ou não está mais disponível'); /*eslint-disable-line*/
 
       setGallery(data);
       setFetched(true);
@@ -47,6 +48,7 @@ export default function Gallery() {
   }, [fetched, gallery, id]);
 
   useEffect(() => {
+    // Set Data if Fetched
     if (fetched && gallery) {
       setSortedImages(gallery.images.sort((a, b) => a.position - b.position));
       setSelectedImage(gallery.images.find(image => image.position === '1'));
@@ -66,16 +68,16 @@ export default function Gallery() {
         <>
           <CloseGallery
             onClick={() => {
-              history.push('/galerias');
+              history.push('/showcase');
             }}
             zoom={zoom}
           >
-            <MdClose size="32px" color={colors.greyHeavy} />
+            <MdClose size="32px" color={colors.statusDanger} />
           </CloseGallery>
           <ClickWrapper
             onClick={e => {
               e.stopPropagation();
-              history.push('/galerias');
+              history.push('/showcase');
             }}
           />
 
@@ -128,9 +130,15 @@ export default function Gallery() {
               )}
             </section>
             <section className="gallery__social">
-              <ButtonLike />
+              <LikesProvider>
+                <ButtonLike likes={gallery.likes} />
+              </LikesProvider>
 
-              <ShareBlock />
+              <ShareBlock
+                media={selectedImage.url}
+                title={gallery.title}
+                description={gallery.description}
+              />
             </section>
             <section className="gallery__text">
               <Article padding="0">{gallery.description}</Article>
@@ -141,3 +149,5 @@ export default function Gallery() {
     </Wrapper>
   );
 }
+
+export default Gallery;

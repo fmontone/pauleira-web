@@ -14,9 +14,12 @@ export default function Contact() {
   return (
     <>
       <Meta data={metadata} image={metaImage} />
-      <PageTitle>Contato</PageTitle>
+      <PageTitle
+        title="contato"
+        theTitle="Atendemos somente com hora marcada"
+        subTitle="Se for mensagem pode mandar a qualquer hora que respondemos quando estivermos livres :)"
+      />
       <Container>
-        <h2>Atendemos somente com hora marcada</h2>
         <section>
           <div className="contact__info">
             <h4>Dados de Contato</h4>

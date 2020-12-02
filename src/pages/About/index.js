@@ -8,12 +8,13 @@ import PaulaBifulco from '~/assets/pics/paula-bifulco-luthier-guitar-maker-paule
 export default function About() {
   return (
     <>
-      <PageTitle>Sobre</PageTitle>
+      <PageTitle
+        title="Sobre"
+        theTitle="Olá, eu sou a Pauleira!"
+        subTitle="Eu amo inspirar pessoas a fazerem coisas diferentes!"
+      />
       <Container>
         <Article>
-          <header>
-            <h2>Eu amo inspirar pessoas a fazerem coisas diferentes!</h2>
-          </header>
           <section>
             <p>
               Olá! Meu nome é Paula Bifulco, sou guitar Maker há mais de 10 anos

@@ -37,17 +37,30 @@ export const PictureSelector = styled.div`
     overflow: hidden;
     background-color: black;
 
+    border-radius: 4px;
+
+    button {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+    }
+
     :last-child {
       margin-right: 320px;
     }
 
     & + li {
       margin-left: 8px;
-    }
-
-    img {
-      object-fit: cover;
-      height: 100%;
     }
   }
 `;
